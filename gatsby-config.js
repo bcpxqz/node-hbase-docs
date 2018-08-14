@@ -3,7 +3,60 @@ module.exports = {
     title: 'Gatsby Default Starter',
   },
   plugins: [
+    // Fix https://github.com/gatsbyjs/gatsby/issues/2049
+    `gatsby-plugin-material-ui`,
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/md`,
+        name: 'markdown-pages',
+      },
+      // },{
+      //   resolve: `gatsby-plugin-typography`,
+      //   options: {
+      //     pathToConfigModule: `src/utils/typography.js`,
+      //   },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              offsetY: '64', // <600: 48; >600:64
+            },
+          },
+          {
+            resolve: 'gatsby-remark-toc-patched',
+            options: {
+              header: 'Table of Contents', // the custom header text
+              include: [
+                '**/*.md', // an include glob to match against
+              ],
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-catch-links`,
+    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: 'UA-XXXXXXX-X',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

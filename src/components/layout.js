@@ -3,8 +3,24 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+// Material UI
+import { withStyles } from '@material-ui/core/styles'
+
 import Header from './header'
 import './layout.css'
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    alignItems: 'stretch',
+    minHeight: '100vh',
+    width: '100%',
+  },
+  content: {
+    width: '100%',
+    marginLeft: 0,
+  },
+})
 
 const Layout = ({ children, data }) => (
   <StaticQuery
@@ -18,7 +34,7 @@ const Layout = ({ children, data }) => (
       }
     `}
     render={data => (
-      <>
+      <div>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -39,7 +55,7 @@ const Layout = ({ children, data }) => (
         >
           {children}
         </div>
-      </>
+      </div>
     )}
   />
 )
@@ -48,4 +64,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default withStyles(styles, { withTheme: true })(Layout)
