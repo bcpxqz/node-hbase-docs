@@ -3,29 +3,46 @@ import classNames from 'classnames'
 
 // Material UI
 import { withStyles } from '@material-ui/core/styles'
-import Modal from '@material-ui/core/Modal'
+// import Modal from '@material-ui/core/Modal'
 
 const styles = theme => ({
-  aside: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: '-250px',
-    width: '250px',
-    backgroundColor: '#ccc',
+  main: {
+    position: 'relative',
+    margin: 0,
+    paddingLeft: 250,
+    // left: 0,
+    // right: 0,
+    // width: '100%',
+    // bottom: 0,
     // height: '100%',
     overflow: 'auto',
+    backgroundColor: "#F2F2F2",
+    '@media (max-width: 960px)': {
+      paddingLeft: 0,
+    },
   },
-  asideOpen: {
+  mainClose: {
+    paddingLeft: 0,
     left: 0,
-    width: '250px',
-    transition: theme.transitions.create('left', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
+  },
+  mainOpen: {
+    '@media (min-width: 960px)': {
+      paddingLeft: '250px',
+      transition: theme.transitions.create('padding-left', {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+    },
+    '@media (max-width: 960px)': {
+      left: '250px',
+      transition: theme.transitions.create('left', {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+    },
   },
   overflowOpen: {
-    '@media (max-width: 800px)': {
+    '@media (max-width: 960px)': {
       position: 'fixed',
       top: 0,
       left: 0,
@@ -34,27 +51,31 @@ const styles = theme => ({
       backgroundColor: 'rgba(0, 0, 0, .6)'
     },
   },
-  main: {
-    position: 'absolute',
+  aside: {
+    position: 'fixed',
     top: 0,
+    // bottom: 0,
+    height: '100vh',
     left: 0,
-    // right: 0,
-    width: '100%',
-    bottom: 0,
+    width: '250px',
+    backgroundColor: '#ccc',
     // height: '100%',
     overflow: 'auto',
-    backgroundColor: "#F2F2F2"
+    '@media (max-width: 960px)': {
+      left: '-250px',
+      backgroundColor: 'green',
+    },
   },
-  mainOpen: {
-    left: '250px',
+  asideClose: {
+    left: '-250px',
+  },
+  asideOpen: {
+    left: 0,
     transition: theme.transitions.create('left', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    '@media (min-width: 800px)': {
-      left: '250px',
-    },
-  }
+  },
 })
 
 class Drawer extends Component {
@@ -65,26 +86,39 @@ class Drawer extends Component {
   // }
   // componentDidMount(){
   //   const {open} = this.props;
-  //   if(open !== undefined && window.innerWidth > 800){
+  //   if(open !== undefined && window.innerWidth > 960){
   //     this.setState({ open: open })
   //   }
   // }
-  // <div className={classNames({[classes.overflowOpen]: open})} onClick={ this.props.onModalClose } />
+  // <div className={classNames(classes.overflow, { [classes.overflowOpen]: open })} onClick={ this.props.onClickModal } />
   // <aside className={classNames(classes.aside, { [classes.asideOpen]: open })}>
   //   <AsideProps />
   // </aside>
+  // <Modal open={this.props.open}>
+  //   <aside className={classNames(classes.aside, { [classes.asideOpen]: open })}>
+  //     <AsideProps />
+  //   </aside>
+  // </Modal>
   render() {
     const { aside, main, open, classes } = this.props
     const AsideProps = aside
     const MainProps = main
-    console.log('this.props.open', open)
+    const isMobile = this.props.variant === 'mobile'
+    if(isMobile){
+      document.body.style['height'] = '100vh'
+      document.body.style['overflow'] = this.props.open ? 'hidden' : 'auto'
+    }
+    const isWindow = typeof window !== `undefined`
     return (
       <div>
-        <main className={classNames(classes.main, { [classes.mainOpen]: open })}>
+        <main className={classNames(classes.main, { [classes.mainOpen]: isWindow && open, [classes.mainClose]: isWindow && !open })}>
           <MainProps />
         </main>
-        <div className={classNames(classes.overflow, { [classes.overflowOpen]: open })} onClick={ this.props.onClickModal } />
-        <aside className={classNames(classes.aside, { [classes.asideOpen]: open })}>
+        { isMobile && 
+          <div className={classNames(classes.overflow, { [classes.overflowOpen]: open })} onClick={ this.props.onClickModal } />
+        }
+        
+        <aside className={classNames(classes.aside, { [classes.asideOpen]: isWindow && open, [classes.asideClose]: isWindow && !open })}>
           <AsideProps />
         </aside>
       </div>

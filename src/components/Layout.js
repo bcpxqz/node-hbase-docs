@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
@@ -10,7 +9,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Header from './Header'
 import Content from './Content'
 import Drawer from './Drawer'
-// import './layout.css's
+import './layout.css'
 
 const styles = theme => ({
   root: {
@@ -27,15 +26,15 @@ class Layout extends Component {
     super(props);
     this._drawer = React.createRef();
     this.toggle = this.toggle.bind(this)
-    this.state = {open: true}
+    this.state = {open: true, variant: 'screen'}
     // this.setTextInputRef = element => {
     //   this._drawer = element;
     //   console.log(this._drawer.state)
     // };
   }
   componentDidMount(){
-    const {open} = this.props;
-    if(window.innerWidth < 800){
+    if(window.innerWidth < 960){
+      this.setState({ variant: 'mobile' })
       this.setState({ open: false })
     }
   }
@@ -51,7 +50,7 @@ class Layout extends Component {
     this.setState({open: !this.state.open})
   }
   render() {
-    const { children, data, classes } = this.props
+    const { children, data } = this.props
     const toggle = this.toggle
     console.log('layout open', this.state.open)
     return (
@@ -66,9 +65,10 @@ class Layout extends Component {
           <html lang="en" />
         </Helmet>
         <Drawer
-          open={this.state.open}
+          variant={ this.state.variant }
+          open={ this.state.open }
           onClickModal={ () => this.setState({open: false})}
-          ref={this._drawer}
+          ref={ this._drawer }
           main={ () => (
             <div>
               <Header siteTitle={data.site.siteMetadata.title} onMenuClick={ toggle } />
