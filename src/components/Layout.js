@@ -9,7 +9,6 @@ import { withStyles } from '@material-ui/core/styles'
 import Header from './Header'
 import Content from './Content'
 import Drawer from './Drawer'
-import './layout.css'
 
 const styles = theme => ({
   root: {
