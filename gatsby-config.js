@@ -4,8 +4,10 @@ module.exports = {
   },
   plugins: [
     // Fix https://github.com/gatsbyjs/gatsby/issues/2049
-    `gatsby-plugin-material-ui`,
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-glamor`,
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
