@@ -4,6 +4,10 @@ import {css} from 'glamor'
 
 class Drawer extends Component {
   styles = {
+    body: {
+      width: '100%',
+      overflowY: 'hidden',
+    },
     main: {
       position: 'relative',
       margin: 0,
@@ -27,31 +31,32 @@ class Drawer extends Component {
         transition: 'left 225ms cubic-bezier(0.0, 0, 0.2, 1)',
       },
     },
-    aside: {
+    drawer: {
       position: 'fixed',
       top: 0,
-      // bottom: 0,
       height: '100vh',
       left: 0,
       width: '250px',
-      backgroundColor: '#ccc',
       overflow: 'auto',
+      '> *': {
+        overflow: 'auto',
+      },
       '@media (max-width: 960px)': {
         left: '-250px',
       },
     },
-    asideClose: {
+    drawerClose: {
       left: '-250px',
     },
-    asideOpen: {
+    drawerOpen: {
       left: 0,
       transition: 'left 225ms cubic-bezier(0.0, 0, 0.2, 1)',
-    },
-    asideOpenModal: {
       '.ReactModal__Content--after-open': {
         left: 0,
         transition: 'left 225ms cubic-bezier(0.0, 0, 0.2, 1)',
       }
+    },
+    drawerOpenModal: {
     },
     overlay: {
       position: 'fixed',
@@ -73,9 +78,9 @@ class Drawer extends Component {
     }
   }
   render() {
-    const { aside, main, open } = this.props
+    const { drawer, main, open } = this.props
     const {isMobile} = this.state
-    const AsideProps = aside
+    const DrawerProps = drawer
     const MainProps = main
     const isWindow = typeof window !== `undefined`
     return (
@@ -89,19 +94,18 @@ class Drawer extends Component {
             onRequestClose={ this.props.onClickModal }
             aria={{labelledby: "Menu", describedby: "Navigate through the site"}}
             appElement={this.main.current}
-            className={css([this.styles.aside, isWindow && open && this.styles.asideOpenModal, isWindow && !open && this.styles.asideClose]).toString()}
+            className={css([this.styles.drawer, isWindow && open && this.styles.drawerOpen, isWindow && !open && this.styles.drawerClose]).toString()}
             overlayClassName={css(this.styles.overlay).toString()}
+            bodyOpenClassName={css(this.styles.body).toString()}
           >
-            <aside>
-              <AsideProps />
-            </aside>
+            <DrawerProps />
           </Modal>
           :
-          <aside
-            css={[this.styles.aside, isWindow && open && this.styles.asideOpen, isWindow && !open && this.styles.asideClose]}
+          <div
+            css={[this.styles.drawer, isWindow && open && this.styles.drawerOpen, isWindow && !open && this.styles.drawerClose]}
           >
-            <AsideProps />
-          </aside>
+            <DrawerProps />
+          </div>
         }
       </div>
     )

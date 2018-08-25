@@ -7,8 +7,14 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Content from './Content'
 import Drawer from './Drawer'
+import Menu from './Menu'
 
 class Layout extends Component {
+  styles = {
+    drawer: {
+      backgroundColor: '#EBEBEB',
+    }
+  }
   constructor(props) {
     super(props);
     this._drawer = React.createRef();
@@ -26,8 +32,11 @@ class Layout extends Component {
   }
   render() {
     const { children, data } = this.props
+    const {styles} = this
     const toggle = this.toggle
-    console.log('layout open', this.state.open)
+    const pages = data.pages.edges.map( (page) => {
+      return {...page.node.fields, ...page.node.frontmatter}
+    })
     return (
       <>
         <Helmet
@@ -56,55 +65,8 @@ class Layout extends Component {
               </footer>
             </div>
           )}
-          aside={ () => (
-            <aside>
-              <nav>
-                <ul>
-                  <li>Getting Started</li>
-                  <li>Changelog</li>
-                  <li>Getting Started</li>
-                  <li>Changelog</li>
-                  <li>Getting Started</li>
-                  <li>Changelog</li>
-                    <li>Getting Started</li>
-                    <li>Changelog</li>
-                    <li>Getting Started</li>
-                    <li>Changelog</li>
-                    <li>Getting Started</li>
-                    <li>Changelog</li>
-                      <li>Getting Started</li>
-                      <li>Changelog</li>
-                      <li>Getting Started</li>
-                      <li>Changelog</li>
-                      <li>Getting Started</li>
-                      <li>Changelog</li>
-                        <li>Getting Started</li>
-                        <li>Changelog</li>
-                        <li>Getting Started</li>
-                        <li>Changelog</li>
-                        <li>Getting Started</li>
-                        <li>Changelog</li>
-                          <li>Getting Started</li>
-                          <li>Changelog</li>
-                          <li>Getting Started</li>
-                          <li>Changelog</li>
-                          <li>Getting Started</li>
-                          <li>Changelog</li>
-                            <li>Getting Started</li>
-                            <li>Changelog</li>
-                            <li>Getting Started</li>
-                            <li>Changelog</li>
-                            <li>Getting Started</li>
-                            <li>Changelog</li>
-                              <li>Getting Started</li>
-                              <li>Changelog</li>
-                              <li>Getting Started</li>
-                              <li>Changelog</li>
-                              <li>Getting Started</li>
-                              <li>Changelog</li>
-                </ul>
-              </nav>
-            </aside>
+          drawer={ () => (
+            <Menu pages={pages} styles={styles.drawer} />
           )}
         />
       </>
@@ -116,9 +78,25 @@ const QueryLayout = props => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
-        site {
+        site: site {
           siteMetadata {
             title
+          }
+        }
+        pages: allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___sort] }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                sort
+              }
+              fields {
+                slug
+              }
+            }
           }
         }
       }
