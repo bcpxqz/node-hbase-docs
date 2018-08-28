@@ -12,14 +12,14 @@ rows and columns from HBase. Internally, it implements the native
 ## Grab an instance of "Scanner"
 
 ```javascript
-var myScanner = hbase({}).getTable('my_table').scan(...);
+const myScanner = hbase({}).getTable('my_table').scan(...)
 ```
 
 Or
 
 ```javascript
-var client = new hbase.Client({});
-var myScanner = new hbase.Scanner(client, {table: 'my_table'});
+const client = new hbase.Client({})
+const myScanner = new hbase.Scanner(client, {table: 'my_table'})
 ```
 
 ## Options
@@ -130,7 +130,7 @@ Internal method to create a new scanner and retrieve its ID.
 Internal method to retrieve a batch of records.
 
 ```javascript
-myScanner.get(callback);
+myScanner.get(callback)
 ```
 
 The method is expected to be called multiple time to get the next cells from
@@ -145,7 +145,7 @@ responsibity to call `get` as long as more cells are expected.
 Internal method to unregister the scanner from the HBase server.
 
 ```javascript
-myScanner.delete(callback);
+myScanner.delete(callback)
 ```
 
 Callback is optionnal and receive two arguments, an 

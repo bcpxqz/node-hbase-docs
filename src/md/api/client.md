@@ -42,15 +42,15 @@ or [https](https://nodejs.org/api/https.html#https_https_request_options_callbac
 Calling the `hbase` method return an initialized client object.
 
 ```javascript
-var hbase = require('hbase');
-var client = hbase({ options });
+const hbase = require('hbase')
+const client = hbase({ options })
 ```
 
 You can also manually construct a new instance as follow:
 
 ```javascript
-var hbase = require('hbase');
-var client = new hbase.Client({ options });
+const hbase = require('hbase')
+const client = new hbase.Client({ options })
 ```
 
 ## Events
@@ -83,7 +83,7 @@ Will print something similar to:
 
 ```javascript
 client.version_cluster( function( error, version ){
-  console.info( version );
+  console.info( version )
 } );
 ```
 
@@ -97,7 +97,7 @@ Will print something similar to:
 
 ```javascript
 client.status_cluster( function( error, statusCluster ){
-  console.info( statusCluster );
+  console.info( statusCluster )
 } );
 ```
 

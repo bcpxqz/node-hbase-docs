@@ -33,7 +33,7 @@ const connection = new hbase.Connection( client )
 ## HTTP Get requests
 
 ```javascript
-myConnection.get(command, callback, [status]);
+myConnection.get(command, callback, [status])
 ```
 
 Execute an HTTP Get request. The callback contains 3 arguments: the error object if any, the decoded response body and the Node `http.ClientResponse` object.

@@ -11,7 +11,7 @@ multiple operations are available and are documented below.
 ## Grab an instance of "Row"
 
 ```javascript
-const myRow = hbase({}).table('my_table').row('my_row');
+const myRow = hbase({}).table('my_table').row('my_row')
 ```
 
 Or
@@ -24,7 +24,7 @@ const myRow = new hbase.Row(client, 'my_table', 'my_row')
 ## Retrieve values from HBase
 
 ```javascript
-myRow.get([column], [options], callback);
+myRow.get([column], [options], callback)
 ```
 
 Column is optional and corresponds to a column family optionnally followed by a column name separated with a column (":").
@@ -110,7 +110,7 @@ Print something like
 ## Insert and update a column value
 
 ```javascript
-myRow.put(column, data, [timestamp], callback);
+myRow.put(column, data, [timestamp], callback)
 ```
 
 Column is required and corresponds to a column family optionnally followed by a column name separated with a column (":").
@@ -129,8 +129,8 @@ hbase()
 ## Insert and update multiple column values
 
 ```javascript
-myRow.put(columns, values, [timestamps], callback);
-myRow.put(data, callback);
+myRow.put(columns, values, [timestamps], callback)
+myRow.put(data, callback)
 ```
 
 Inserting values into multiple columns is achieved the same way as for a single column but the column and data arguments must be an array of the same length.
@@ -167,7 +167,7 @@ hbase()
 ## Insert and update multiple rows
 
 ```javascript
-myRow.put(data, callback);
+myRow.put(data, callback)
 ```
 
 HBase allows us to send multiple cells from multiple rows in batch. To achieve it, construct a new row with a null key and provide the `put` function with an array of cells. Each cell objects must include the row `key`, `column` and `$` properties while `timestamp` is optional.

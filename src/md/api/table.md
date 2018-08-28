@@ -8,14 +8,14 @@ sort: 3
 ## Grab an instance of "hbase.Table"
 
 ```javascript
-var myTable = hbase({}).table('my_table');
+const myTable = hbase({}).table('my_table')
 ```
 
 Or
 
 ```javascript
-var client = new hbase.Client({});
-var myTable = new hbase.Table(client, 'my_table');
+const client = new hbase.Client({})
+const myTable = new hbase.Table(client, 'my_table')
 ```
 
 ## Create a new table in HBase
@@ -35,7 +35,7 @@ its `create` function with the schema as argument.
 hbase()
 .table('my_new_table')
 .create('my_new_column', function(error, success){
-  console.info('Table created: ' + (success ? 'yes' : 'no'));
+  console.info('Table created: ' + (success ? 'yes' : 'no'))
 } );
 ```
 
@@ -80,7 +80,7 @@ hbase()
 ## Check if a table is created
 
 ```javascript
-myTable.exists(calblack);
+myTable.exists(calblack)
 ```
 
 ## Update an existing table
@@ -93,7 +93,7 @@ NOT YET WORKING, waiting for [HBASE-3140](https://issues.apache.org/jira/browse/
 hbase()
 .table( 'my_new_table' )
 .schema(function(error, schema){
-  console.info(schema);
+  console.info(schema)
 });
 ```
 
@@ -124,7 +124,7 @@ Will print something similar to:
 hbase()
 .table( 'my_new_table' )
 .regions(function(error, regions){
-  console.info(regions);
+  console.info(regions)
 });
 ```
 

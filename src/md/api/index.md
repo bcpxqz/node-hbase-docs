@@ -11,7 +11,7 @@ HBase is part of the Hadoop ecosystem from the Apache Software Foundation. It is
 
 ## Installing HBase
 
-We found the cloudera distribution to be the easiest way to get started. If you run Ubuntu, Debian or RedHat, the packages are integrated with apt-get and yum. However, desptite respecting the Unix conventions, we found the installation quite inconvient, having constantly to search for config, bin, data files all dispatched over the filesystem. For this reason, we usually download the packages from `http://archive.cloudera.com/cdh/3/` and install each of them manually inside a single folder. At minimum, you'll need to install hadoop and hbase.
+Downloading the [Cloudera CDH](https://www.cloudera.com/downloads/quickstart_vms.html) or [Hortonworks HDP](https://hortonworks.com/products/sandbox/) sandboxs are the easiest way to get started. If you run Ubuntu, Debian or RedHat, those two distributions provide packages integrated with apt-get and yum. It is also possible to download the binaries from the [official website](http://hbase.apache.org/).
 
 ## Starting HBase
 
@@ -46,8 +46,8 @@ npm install hbase
 ## Creating a new instance
 
 ```javascript
-var hbase = require('hbase')
-var client = hbase({
+const hbase = require('hbase')
+const client = hbase({
   host: '127.0.0.1',
   port: 8080
 })
@@ -56,8 +56,8 @@ var client = hbase({
 Or
 
 ```javascript
-var hbase = require('hbase')
-var client = new hbase.Client({
+const hbase = require('hbase')
+const client = new hbase.Client({
   host: '127.0.0.1',
   port: 8080
 })
