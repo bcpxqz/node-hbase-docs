@@ -47,8 +47,7 @@ available:
 
 ## Using the Stream Readable API
 
-The Stream Readable API is a scallable solution to throttle the iteratation of 
-large volumes of data. By large, we mean a volume exceeding the memory capacity of the node hosting the process.
+The Stream Readable API is a scalable solution to throttle the iteration of large volumes of data. By large, we mean a volume exceeding the memory capacity of the node hosting the process.
 
 ```javascript
 const scanner = client
@@ -72,8 +71,7 @@ scanner.on( 'end', =>
 
 ## Using the callback API
 
-For conveniency, the `scan` function exported by the table object accepts a 
-callback function which will be called when the scan has complete.
+For convenience, the `scan` function exported by the table object accepts a callback function which will be called when the scan has completed. Be warned, using a callback implies that the returned data set must fit in memory.
 
 ```javascript
 client
@@ -96,7 +94,7 @@ a new scanner, just associate the `filter` property with
 your filter object. All filters are supported.   
 
 Many examples are available in the tests but here's one
-wich returns all rows starting by "my_key_" and whose
+which returns all rows starting by "my_key_" and whose
 value is "here you are".   
 
 ```javascript
@@ -119,11 +117,11 @@ client
 });
 ```
 
-## `Scanner.init(callback)`
+## API: scanner.init
 
 Internal method to create a new scanner and retrieve its ID.
 
-## `Scanner.get(callback)`
+## API: scanner.get
 
 Internal method to retrieve a batch of records.
 
@@ -136,9 +134,9 @@ HBase. The callback is required and receive two arguments, an error object if
 any and a array of cells or null if the scanner is exhausted.
 
 The number of cells depends on the `batch` option. It is your
-responsibity to call `get` as long as more cells are expected.
+responsibility to call `get` as long as more cells are expected.
 
-## `Scanner.delete(callback)`
+## API: scanner.delete
 
 Internal method to unregister the scanner from the HBase server.
 
@@ -146,10 +144,10 @@ Internal method to unregister the scanner from the HBase server.
 myScanner.delete(callback)
 ```
 
-Callback is optionnal and receive two arguments, an 
+The callback is optional and receives two arguments, an 
 error object if any and a boolean indicating whether 
 the scanner was removed or not.
 
-## `Scanner._read(size)`
+## API: scanner.\_read(size)
 
 Implementation of the `stream.Readable` API.
