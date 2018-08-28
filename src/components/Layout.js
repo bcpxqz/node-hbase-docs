@@ -89,7 +89,7 @@ const QueryLayout = props => (
           }
         }
         pages: allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___sort] }
+          sort: { order: ASC, fields: [frontmatter___sort] }
           limit: 1000
         ) {
           edges {
