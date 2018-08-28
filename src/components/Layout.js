@@ -8,12 +8,16 @@ import Header from './Header'
 import Content from './Content'
 import Drawer from './Drawer'
 import Menu from './Menu'
+import Footer from './Footer'
 
 class Layout extends Component {
   styles = {
     drawer: {
       backgroundColor: '#EBEBEB',
-    }
+    },
+    footer: {
+      backgroundColor: '#EBEBEB',
+    },
   }
   constructor(props) {
     super(props);
@@ -63,9 +67,7 @@ class Layout extends Component {
               <Content>
                 {children}
               </Content>
-              <footer>
-                <p>...footer...</p>
-              </footer>
+              <Footer />
             </div>
           )}
           drawer={ () => (

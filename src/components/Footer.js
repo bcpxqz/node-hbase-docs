@@ -1,0 +1,90 @@
+import React, {Component} from 'react'
+import {Link} from 'gatsby'
+
+class Footer extends Component {
+  styles = {
+    root: {
+      maxWidth: 800,
+      display: 'flex',
+      flexWrap: 'wrap',
+      borderTop: '1rem solid #fff',
+      paddingBottom: '1rem',
+      '@media (max-width: 960px)': {
+        margin: '0 1rem',
+      },
+      '@media (min-width: 960px)': {
+        margin: '0 2rem 0 15%',
+        textAlign: 'justify',
+      },
+      '& h1': {
+        margin: '1rem 0 .5rem 0',
+        color: '#9B9B9B',
+        fontFamily: 'Arvo sans-serif',
+        fontWeight: 'normal',
+        fontSize: '1.4rem',
+      },
+      '& ul, & p': {
+        margin: '0 0 0 0',
+      },
+      '& li': {
+        margin: 0,
+        textIndent: 0,
+        listStyleType: 'none',
+      },
+    },
+    navigate: {
+      // width: '25%',
+      flex: '1',
+      '@media (max-width: 960px)': {
+        // width: '50%',
+        flex: '0 0 50%',
+      },
+    },
+    contribute: {
+      // width: '25%',
+      flex: '1',
+      '@media (max-width: 960px)': {
+        // width: '50%',
+        flex: '0 0 50%',
+      },
+    },
+    about: {
+      // width: '100%',
+      flex: '2',
+      '@media (max-width: 960px)': {
+        // width: '100%',
+        flex: '0 0 100%',
+      },
+    },
+  }
+  render() {
+    const {} = this.props
+    const {styles} = this
+    return (
+      <footer css={styles.root}>
+        <nav css={styles.navigate}>
+          <h1>Navigate</h1>
+          <ul>
+            <li><Link to="/learn/quickstart">Getting Started</Link></li>
+            <li><Link to="/learn/quickstart">Changelog</Link></li>
+            <li><Link to="/learn/quickstart">License</Link></li>
+          </ul>
+        </nav>
+        <nav css={styles.contribute}>
+          <h1>Contribute</h1>
+          <ul>
+            <li><Link to="/learn/quickstart">GitHub</Link></li>
+            <li><Link to="/learn/quickstart">Issue Tracker</Link></li>
+            <li><Link to="/learn/quickstart">License</Link></li>
+          </ul>
+        </nav>
+        <div css={styles.about}>
+          <h1>About</h1>
+          <p>Node.js HBase is an open source product hosted on GitHub and developed by Adaltas.</p>
+        </div>
+      </footer>
+    )
+  }
+}
+
+export default Footer
