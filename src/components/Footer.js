@@ -74,17 +74,17 @@ class Footer extends Component {
         <nav css={styles.navigate}>
           <h1>Navigate</h1>
           <ul>
-            <li><Link to="/learn/quickstart">Getting Started</Link></li>
-            <li><Link to="/learn/quickstart">Changelog</Link></li>
-            <li><Link to="/learn/quickstart">License</Link></li>
+            <li><Link to="/learn/quickstart/">Getting Started</Link></li>
+            <li><Link to="/learn/changelog/">Changelog</Link></li>
+            <li><Link to="/learn/license/">License</Link></li>
           </ul>
         </nav>
         <nav css={styles.contribute}>
           <h1>Contribute</h1>
           <ul>
-            <li><Link to="/learn/quickstart">GitHub</Link></li>
-            <li><Link to="/learn/quickstart">Issue Tracker</Link></li>
-            <li><Link to="/learn/quickstart">License</Link></li>
+            <li><Link to="/learn/contribute/">How to contribute</Link></li>
+            <li><a href="https://github.com/adaltas/node-hbase" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/adaltas/node-hbase/issues" target="_blank" rel="noopener">Issue Tracker</a></li>
           </ul>
         </nav>
         <div css={styles.about}>
