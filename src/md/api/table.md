@@ -18,7 +18,9 @@ const client = new hbase.Client({})
 const myTable = new hbase.Table(client, 'my_table')
 ```
 
-## Create a new table in HBase
+## API: table.create
+
+Create a new table in HBase.
 
 ```javascript
 myTable.create(callback)
@@ -52,13 +54,15 @@ hbase()
 })
 ```
 
-## Drop an existing table
+## API: table.delete
+
+Drop an existing table.
 
 ```javascript
 myTable.delete(callback);
 ```
 
-Callback is optional and receives two arguments, an error object if any and a boolean indicating whether the table was removed/disabled or not.
+The callback argument is optional and receives two arguments, an error object if any and a boolean value indicating whether the table was removed/disabled or not.
 
 ```javascript
 hbase()
@@ -68,7 +72,9 @@ hbase()
 })
 ```
 
-## Check if a table is created
+## API: table.exists
+
+Check if a table is created.
 
 ```javascript
 myTable.exists(calblack)
@@ -78,7 +84,9 @@ myTable.exists(calblack)
 
 NOT YET WORKING, waiting for [HBASE-3140](https://issues.apache.org/jira/browse/HBASE-3140).
 
-## Retrieves table schema
+## API: table.schema
+
+Retrieves the table schema.
 
 ```javascript
 hbase()
@@ -109,7 +117,9 @@ Will print something similar to:
 }
 ```
 
-## Retrieves table region metadata
+## API: table.regions
+
+Retrieves the table region metadata
 
 ```javascript
 hbase()
@@ -134,14 +144,18 @@ Will print something similar to:
 }
 ```
 
-## Return a new row instance
+## API: table.row
+
+Return a new row instance.
 
 ```javascript
 Table.row(key)
 ```
 
 
-## Return a new scanner instance
+## API: table.scan
+
+Return a new scanner instance.
 
 ```javascript
 Table.scan(options, [callback])

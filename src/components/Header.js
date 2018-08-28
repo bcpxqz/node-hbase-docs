@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
 import { Link } from 'gatsby'
+import { css } from 'glamor'
 // Material UI
 import IconButton from '@material-ui/core/IconButton'
+import Tooltip from '@material-ui/core/Tooltip'
 // Local
 import Logo from './Logo'
-import { FaBars } from 'react-icons/fa';
+import { FaBug, FaGithub, FaBars } from 'react-icons/fa';
 
 class Header extends Component {
   styles = {
@@ -61,6 +63,9 @@ class Header extends Component {
     grow: {
       flex: '1 1 auto',
     },
+    icon: {
+      marginLeft: '1rem !important',
+    },
     menu: {
       '@media (max-width: 960px)': {
         width: '1.4rem',
@@ -84,14 +89,40 @@ class Header extends Component {
           <div css={[styles.mainContainer]}>
             <div css={styles.title}><Link to="/">Node.js HBase</Link></div>
             <div css={styles.grow} />
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={onMenuClick}
-              css={styles.icon}
-            >
-              <FaBars css={styles.menu} />
-            </IconButton>
+            <Tooltip id="header-bug" title="Report an issue" enterDelay={300}>
+              <IconButton
+                color="inherit"
+                aria-labelledby="header-bug"
+                href='https://github.com/adaltas/node-hbase/issues'
+                target="_blank"
+                rel="noopener"
+                className={css(styles.icon).toString()}
+              >
+                <FaBug css={styles.menu} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip id="header-github" title="Project on GitHub" enterDelay={300}>
+              <IconButton
+                color="inherit"
+                aria-labelledby="header-github"
+                href='https://github.com/adaltas/node-hbase'
+                target="_blank"
+                rel="noopener"
+                className={css(styles.icon).toString()}
+              >
+                <FaGithub css={styles.menu} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip id="header-menu" title="Toggle the menu" enterDelay={300}>
+              <IconButton
+                color="inherit"
+                aria-labelledby="header-menu"
+                onClick={onMenuClick}
+                className={css(styles.icon).toString()}
+              >
+                <FaBars css={styles.menu} />
+              </IconButton>
+            </Tooltip>
           </div>
         </div>
       </div>

@@ -80,7 +80,9 @@ talbe('my_table')
 })
 ```
 
-## Retrieve values from multiple rows
+## API: row.get
+
+Retrieve values from one or multiple rows.
 
 Values from multiple rows is achieved by appending a suffix glob on the row key. Note the new "key" property present in the returned objects.
 
@@ -109,7 +111,11 @@ Print something like
 ]
 ```
 
-## Insert and update a column value
+## API: row.put
+
+Insert and update one or multiple column values.
+
+### Single value
 
 ```javascript
 myRow.put(column, data, [timestamp], callback)
@@ -128,7 +134,8 @@ hbase()
 })
 ```
 
-## Insert and update multiple column values
+
+### Multiple values
 
 ```javascript
 myRow.put(columns, values, [timestamps], callback)
@@ -166,7 +173,7 @@ hbase()
 })
 ```
 
-## Insert and update multiple rows
+## Multiple rows
 
 ```javascript
 myRow.put(data, callback)
@@ -188,15 +195,17 @@ hbase()
 })
 ```
 
-## Test if a row or a column exists
+## API: row.exists
+
+Test if a row or a column exists.
 
 ```javascript
 myRow.exists([column], callback);
 ```
 
-Column is optional and corresponds to a column family optionnally followed by a column name separated with a column (":").
+The column argument is optional and corresponds to a column family optionally followed by a column name separated with a colon character (":").
 
-Callback is required and receive two arguments, an error object if any and a boolean indicating whether the column exists or not.
+The callback argument is required and receives two arguments, an error object if any and a boolean value indicating whether the column exists or not.
 
 Example to see if a row exists:
 
@@ -220,7 +229,11 @@ hbase()
 })
 ```
 
-## Delete a row or a column
+## API: row.delete
+
+Delete one or multiple rows or columns.
+
+### Delete a single row or column
 
 ```javascript
 myRow.delete([column], callback);
@@ -252,7 +265,7 @@ hbase()
 })
 ```
 
-## Delete multiple columns
+### Delete multiple rows or columns
 
 Deleting multiple columns is achieved by providing an array of columns as the first argument.
 

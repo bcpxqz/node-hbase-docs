@@ -3,7 +3,7 @@ title: Scanner
 sort: 5
 ---
 
-# Scanner operations
+# Scanner and filter operations
 
 Scanner are the most efficient way to retrieve multiple rows and columns from HBase. For scalability reasons, this module implements internally the native [Node.js Stream Readable API](https://nodejs.org/api/stream.html#stream_class_stream_readable).
 

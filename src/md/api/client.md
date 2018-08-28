@@ -54,7 +54,9 @@ The client extends the native Node.js [EventEmitter API](https://nodejs.org/api/
 * `request`   
   An object with the keys `options` and `data` if the request is of type "PUT" or "POST".
 
-## Query Software Version
+## API: version
+
+Query Software Version.
 
 ```javascript
 client.version((error, version) => {
@@ -73,7 +75,9 @@ Will print something similar to:
 }
 ```
 
-## Query Storage Cluster Version
+## API: version_cluster
+
+Query the storage cluster version.
 
 ```javascript
 client.version_cluster( function( error, version ){
@@ -87,7 +91,9 @@ Will print something similar to:
 '0.89.20100726'
 ```
 
-## Query Storage Cluster Status
+## API: client.status_cluster
+
+Query the storage cluster status.
 
 ```javascript
 client.status_cluster( function( error, statusCluster ){
@@ -106,7 +112,9 @@ Will print something similar to:
 }
 ```
 
-## List tables
+## API: client.tables
+
+List tables.
 
 ```javascript
 client.tables((error, tables) => {
@@ -120,6 +128,6 @@ Will print something similar to:
 [ { "name": "node_hbase" } ]
 ```
 
-## `client.table`
+## API: client.table
 
-Return a new instance of ["hbase.Table"](./table.md).
+Return a new instance of ["hbase.Table"](./table.md) and get access to a table. From there, multiple operations are available to create, modify and delete HBase tables as well as to access rows and scanners.
