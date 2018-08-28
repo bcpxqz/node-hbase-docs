@@ -7,14 +7,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     node.frontmatter.disabled = !!node.frontmatter.disabled
     slug = createFilePath({ node, getNode, basePath: `pages` })
     edit_url =
-      'https://github.com/adaltas/node-hbase/edit/master/src/md' +
-      createFilePath({
-        node,
-        getNode,
-        basePath: `pages`,
-        trailingSlash: false,
-      }) +
-      '.md'
+      'https://github.com/adaltas/node-hbase-docs/edit/master/src/md/' + 
+      path.relative(path.resolve('src/md'), node.fileAbsolutePath)
     createNodeField({
       node,
       name: `slug`,
