@@ -1,8 +1,18 @@
 
 
 import Typography from "typography";
-import grandview from 'typography-theme-grand-view'
+import theme from 'typography-theme-grand-view'
 
-const typography = new Typography(grandview);
+theme.overrideThemeStyles = ({ rhythm }, options) => ({
+  'h1': {
+    textAlign: 'center',
+  },
+  'h2': {
+    borderBottom: '.5rem solid #fff',
+    lineHeight: rhythm(1.5),
+  },
+})
+
+const typography = new Typography(theme)
 
 export default typography;
