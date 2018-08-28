@@ -34,7 +34,7 @@ class Layout extends Component {
     this.setState({open: !this.state.open})
   }
   render() {
-    const { children, data } = this.props
+    const { children, data, page } = this.props
     const {styles} = this
     const toggle = this.toggle
     const clickLink = () => {
@@ -64,7 +64,7 @@ class Layout extends Component {
           main={ () => (
             <div>
               <Header siteTitle={data.site.siteMetadata.title} onMenuClick={ toggle } />
-              <Content>
+              <Content page={page}>
                 {children}
               </Content>
               <Footer />
