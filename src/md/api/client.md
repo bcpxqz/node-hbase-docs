@@ -7,8 +7,7 @@ sort: 2
 
 ## Creating a new client
 
-A new instance of "HBase" may be instantiated with an object containing the
-following properties:
+A new instance of "HBase" may be instantiated with an object containing the following properties:
 
 * `protocol` (string, optional, default to "localhost")   
   One of 'http' or 'https', default to "http".
@@ -21,20 +20,15 @@ following properties:
 * `krb5.principal` (string, required for secure connection)   
   Kerberos user principal.
 * `krb5.password` (string, optional)   
-  Kerberos password of the user principal or null if using a keytab or the
-  default credential cache.
+  Kerberos password of the user principal or null if using a keytab or the default credential cache.
 * `krb5.keytab` (string, optional)   
-  Path to the Kerberos keytab or null if using a password or the default
-  credential cache.
-* `krb5.service_principal` (string, required for secure connections)   
-  GSS service principal in the form of "HTTP@{fqdn}", automatically
-  discovered if "host" is a correct FQDN.
+  Path to the Kerberos keytab or null if using a password or the default credential cache.
+* `krb5.service_principal` (string, required for secure connections)
+  GSS service principal in the form of "HTTP@{fqdn}", automatically discovered if "host" is a correct FQDN.
 * `timeout` (int, optional)   
   Number of milliseconds before the request timeout.
 
-Other custom options that can be passed to requests. For possible options, take 
-a look at [http](https://nodejs.org/api/http.html#http_http_request_options_callback) 
-or [https](https://nodejs.org/api/https.html#https_https_request_options_callback) request.
+Other custom options that can be passed to requests. For possible options, take a look at [http](https://nodejs.org/api/http.html#http_http_request_options_callback) or [https](https://nodejs.org/api/https.html#https_https_request_options_callback) request.
 
 
 ## Grab an instance of "hbase.Client"

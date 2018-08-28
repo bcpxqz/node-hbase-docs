@@ -5,8 +5,7 @@ sort: 4
 
 # Row: CRUD operations on rows and columns
 
-Row objects provide access and manipulation on colunns and rows. Single and
-multiple operations are available and are documented below.
+Row objects provide access and manipulation on colunns and rows. Single and multiple operations are available and are documented below.
 
 ## Grab an instance of "Row"
 
@@ -27,17 +26,20 @@ const myRow = new hbase.Row(client, 'my_table', 'my_row')
 myRow.get([column], [options], callback)
 ```
 
-Column is optional and corresponds to a column family optionnally followed by a column name separated with a column (":").
+Column is optional and corresponds to a column family optionally followed by a column name separated with a column (":").
 
 An optional object of options may contains the following properties:
 
--   start: timestamp indicating the minimal version date
--   end: timestamp indicating the maximal version date
--   v: maximum number of returned versions
+* `start`   
+  Timestamp indicating the minimal version date.
+* `end`   
+  Timestamp indicating the maximal version date.
+* `v`   
+  Maximum number of returned versions.
 
 Note: In our current release of HBase (0.98) the "v" option only work if a column is provided.
 
-Callback is required and receive two arguments, an error object if any and the column value.
+A callback parameter is required and receives two arguments, an error object if any and the column value.
 
 ```javascript
 hbase()
@@ -48,7 +50,7 @@ hbase()
 })
 ```
 
-Print something like
+Print something like:
 
 ```json
 [ { "column": "my_column_family:"

@@ -24,12 +24,9 @@ const myTable = new hbase.Table(client, 'my_table')
 myTable.create(callback)
 ```
 
-Callback is optionnal and receive two arguments, an 
-error object if any and a boolean indicating whether 
-the table was created or not.
+Callback is optionnal and receive two arguments, an error object if any and a boolean indicating whether the table was created or not.
 
-The simplest way is to grab a table object and call 
-its `create` function with the schema as argument.
+The simplest way is to grab a table object and call its `create` function with the schema as argument.
 
 ```javascript
 hbase()
@@ -39,12 +36,7 @@ hbase()
 } );
 ```
 
-For more control on the table and column family schema configuration, the
-argument may be a full schema object. It doesn't need to contain the "name"
-property as it will be injected but may  contain the keys `is_meta` and
-`is_root` as well as the column family schemas. The column property must contain
-the key "name" and any other valid keys (`blocksize`, `bloomfilter`,
-`blockcache`, `compression`, `length`, `versions`, `ttl` and `in_memory`).
+For more control on the table and column family schema configuration, the argument may be a full schema object. It doesn't need to contain the "name" property as it will be injected but may  contain the keys `is_meta` and `is_root` as well as the column family schemas. The column property must contain the key "name" and any other valid keys (`blocksize`, `bloomfilter`, `blockcache`, `compression`, `length`, `versions`, `ttl` and `in_memory`).
 
 ```javascript
 hbase()
@@ -66,8 +58,7 @@ hbase()
 myTable.delete(callback);
 ```
 
-Callback is optional and receives two arguments, an error object if any and a
-boolean indicating whether the table was removed/disabled or not.
+Callback is optional and receives two arguments, an error object if any and a boolean indicating whether the table was removed/disabled or not.
 
 ```javascript
 hbase()
