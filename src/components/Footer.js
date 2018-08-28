@@ -22,6 +22,7 @@ class Footer extends Component {
         fontFamily: 'Arvo sans-serif',
         fontWeight: 'normal',
         fontSize: '1.4rem',
+        textAlign: 'left',
       },
       '& ul, & p': {
         margin: '0 0 0 0',
@@ -30,6 +31,15 @@ class Footer extends Component {
         margin: 0,
         textIndent: 0,
         listStyleType: 'none',
+      },
+      '& a': {
+        color: 'hsla(0,0%,0%,0.8)',
+        ':hover': {
+          color: '#34BF1C',
+        },
+      },
+      '& p a': {
+        textDecoration: 'underline',
       },
     },
     navigate: {
@@ -58,7 +68,6 @@ class Footer extends Component {
     },
   }
   render() {
-    const {} = this.props
     const {styles} = this
     return (
       <footer css={styles.root}>
@@ -80,7 +89,7 @@ class Footer extends Component {
         </nav>
         <div css={styles.about}>
           <h1>About</h1>
-          <p>Node.js HBase is an open source product hosted on GitHub and developed by Adaltas.</p>
+          <p>Node.js HBase is an open source product hosted on <a href="https://www.github.com" target="_blank" rel="noopener">GitHub</a> and developed by <a href="http://www.adaltas.com" target="_blank" rel="noopener">Adaltas</a>.</p>
         </div>
       </footer>
     )

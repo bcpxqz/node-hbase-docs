@@ -4,29 +4,14 @@ import {css} from 'glamor'
 
 class Menu extends Component {
   styles = {
-  //   root: {
-  //     paddingTop: '1px',
-  //     paddingBottom: '1px',
-  //     '& h1, & ul, & li': {
-  //       // margin: 0,
-  //       // padding: 0,
-  //     },
-  //   },
     root: {
       position: 'relative',
       paddingTop: '1rem',
       paddingBottom: '1rem',
-      // boxSizing: 'border-box',
       height: '100% ',
-      // paddingTop: 'calc((100vw - 250px) * 0.15 - 4rem)',
       borderRight: '1rem solid #fff',
-      // display: 'flex',
-      // alignItems: 'center',
-      alignContent: 'stretch',
       '& div': {
         boxSizing: 'border-box',
-        // flex: '0 0 auto',
-        // margin: '2rem 0',
         width: '100%'
       },
       '& nav': {
@@ -39,6 +24,7 @@ class Menu extends Component {
         fontFamily: 'Arvo sans-serif',
         fontWeight: 'normal',
         fontSize: '1.4rem',
+        textAlign: 'left',
       },
       '& ul': {
         margin: 0,
