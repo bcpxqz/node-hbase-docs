@@ -94,7 +94,7 @@ Filter are defined during the scanner creation. If you
 are familiar with HBase filters, it will be real easy to
 use them. Note, you should not worry about encoding the
 values, the library will do it for you. When you create
-a new scanner, just associate the `filter` property with  
+a new scanner, just associate the `filter` property with 
 your filter object. All filters are supported.   
 
 Many examples are available in the tests but here's one
