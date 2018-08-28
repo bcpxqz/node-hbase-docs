@@ -19,11 +19,10 @@ class Layout extends Component {
     super(props);
     this._drawer = React.createRef();
     this.toggle = this.toggle.bind(this)
-    this.state = {open: true, variant: 'screen'}
+    this.state = {open: true, breakpoint: 960}
   }
   componentDidMount(){
-    if(window.innerWidth < 960){
-      this.setState({ variant: 'mobile' })
+    if(window.innerWidth < this.state.breakpoint){
       this.setState({ open: false })
     }
   }
@@ -34,6 +33,11 @@ class Layout extends Component {
     const { children, data } = this.props
     const {styles} = this
     const toggle = this.toggle
+    const clickLink = () => {
+      if(window.innerWidth < this.state.breakpoint){
+        this.setState({ open: false })
+      }
+    }
     const pages = data.pages.edges.map( (page) => {
       return {...page.node.fields, ...page.node.frontmatter}
     })
@@ -49,8 +53,7 @@ class Layout extends Component {
           <html lang="en" />
         </Helmet>
         <Drawer
-          variant={ this.state.variant }
-          breakpoint={960}
+          breakpoint={this.state.breakpoint}
           open={ this.state.open }
           onClickModal={ () => this.setState({open: false})}
           ref={ this._drawer }
@@ -66,7 +69,7 @@ class Layout extends Component {
             </div>
           )}
           drawer={ () => (
-            <Menu pages={pages} styles={styles.drawer} />
+            <Menu pages={pages} styles={styles.drawer} onClickLink={ clickLink } />
           )}
         />
       </>

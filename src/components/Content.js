@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+require('prismjs/themes/prism-tomorrow.css')
 
 class Content extends Component {
   styles = {

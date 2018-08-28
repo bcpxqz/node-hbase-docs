@@ -71,7 +71,7 @@ class Menu extends Component {
     }
   }
   render () {
-    const {pages} = this.props
+    const {pages, onClickLink} = this.props
     const {styles} = this
     return (
       <aside css={[styles.root, this.props.styles]}>
@@ -82,7 +82,13 @@ class Menu extends Component {
             pages.map( (page) =>
               /^\/learn/.test(page.slug) &&
               <li key={page.slug} css={styles.li}>
-                <Link to={page.slug} className={css(styles.link).toString()} activeClassName={css(styles.linkActive).toString()}>{page.title}</Link>
+                <Link
+                  to={page.slug}
+                  className={css(styles.link).toString()}
+                  activeClassName={css(styles.linkActive).toString()}
+                  onClick={onClickLink}>
+                  {page.title}
+                </Link>
               </li>
             )
           }
@@ -95,7 +101,13 @@ class Menu extends Component {
             pages.map( (page) =>
               /^\/api/.test(page.slug) &&
               <li key={page.slug} css={styles.li}>
-                <Link to={page.slug} className={css(styles.link).toString()} activeClassName={css(styles.linkActive).toString()}>{page.title}</Link>
+                <Link
+                  to={page.slug}
+                  className={css(styles.link).toString()}
+                  activeClassName={css(styles.linkActive).toString()}
+                  onClick={onClickLink}>
+                  {page.title}
+                </Link>
               </li>
             )
           }
