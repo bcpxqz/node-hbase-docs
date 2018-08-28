@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-// import { Link } from 'gatsby'
+import { Link } from 'gatsby'
 // Material UI
 import IconButton from '@material-ui/core/IconButton'
 // Local
@@ -50,7 +50,13 @@ class Header extends Component {
       fontWeight: 'bold',
       '@media (max-width: 400px)': {
         fontSize: '1.4rem',
-      }
+      },
+      '& a': {
+        color: '#000',
+        ':hover': {
+          color: '#34BF1C',
+        },
+      },
     },
     grow: {
       flex: '1 1 auto',
@@ -72,11 +78,11 @@ class Header extends Component {
     return (
       <div css={styles.container}>
         <div css={[styles.item, styles.logoItem]}>
-          <Logo />
+          <Link to="/"><Logo /></Link>
         </div>
         <div css={[styles.item, styles.mainItem]}>
           <div css={[styles.mainContainer]}>
-            <div css={styles.title}>Node.js HBase</div>
+            <div css={styles.title}><Link to="/">Node.js HBase</Link></div>
             <div css={styles.grow} />
             <IconButton
               color="inherit"

@@ -64,8 +64,17 @@ class Menu extends Component {
         <nav>
           <h1>Lean more</h1>
           <ul>
-          {
-            pages.map( (page) =>
+          {[
+            (<li key='/' css={styles.li}>
+              <Link
+                to='/'
+                className={css(styles.link).toString()}
+                activeClassName={css(styles.linkActive).toString()}
+                onClick={onClickLink}>
+                Homepage
+              </Link>
+            </li>),
+            ...pages.map( (page) =>
               /^\/learn/.test(page.slug) &&
               <li key={page.slug} css={styles.li}>
                 <Link
@@ -77,7 +86,7 @@ class Menu extends Component {
                 </Link>
               </li>
             )
-          }
+          ]}
           </ul>
         </nav>
         <nav>
