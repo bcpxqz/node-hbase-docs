@@ -1,6 +1,6 @@
 ---
 title: Changelog
-sort: 5
+sort: 2
 ---
 
 # Changelog
