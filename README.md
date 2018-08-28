@@ -1,26 +1,24 @@
-# gatsby-starter-default
-The default Gatsby starter.
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+# Node.js HBase Website
 
-## Install
+The official website of the [Node.js HBase project](https://github.com/adaltas/node-nikita). It is written with [Gatsby.js](https://www.gatsbyjs.org/).
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
+To install and run the server:
+
+```
+git clone https://github.com/adaltas/node-hbase-docs.git hbase-docs
+cd hbase-docs
+yarn install
+npm run develop
 ```
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
+## Request
+
+Encrypt the token for Travis:
+
 ```
-
-Then you can run it by:
-```sh
-cd gatsby-example-site
-gatsby develop
+docker run \
+  --rm -v $PWD:/repo -v ~/.travis:/travis \
+  andredumas/travis-ci-cli \
+  encrypt GH_TOKEN="..your..token.."
 ```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
