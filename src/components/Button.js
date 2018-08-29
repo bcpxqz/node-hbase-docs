@@ -34,6 +34,9 @@ class Ripple extends Component {
   }
   start(event){
     this.child.current.classList.add(css(this.styles.active).toString())
+    this.startTimer = setTimeout(() => {
+      this.child.current.classList.remove(css(this.styles.active).toString())
+    }, 200);
   }
   stop(event, callback){
     this.child.current.classList.remove(css(this.styles.active).toString())
