@@ -1,5 +1,6 @@
 ---
 title: Table
+description: Create, modify and delete HBase tables
 sort: 3
 ---
 

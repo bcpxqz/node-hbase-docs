@@ -1,3 +1,8 @@
+---
+title: HBase REST client for Node.js
+description: Official website and documentation for the HBase Node.js package
+sort: 1
+---
 
 # HBase client for Node.js using REST
 

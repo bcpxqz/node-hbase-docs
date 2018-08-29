@@ -1,5 +1,6 @@
 ---
 title: Row
+description: CRUD operations on rows and columns
 sort: 4
 ---
 

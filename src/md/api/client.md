@@ -1,9 +1,10 @@
 ---
 title: Client
+description: Retrieve server information and API entry point
 sort: 2
 ---
 
-# Client: server information and object factory
+# Client: server information and API entry point
 
 ## Creating a new client
 

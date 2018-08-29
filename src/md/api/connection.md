@@ -1,5 +1,6 @@
 ---
 title: Connection
+description: HTTP REST requests for HBase
 sort: 6
 ---
 

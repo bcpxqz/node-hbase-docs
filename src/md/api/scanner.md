@@ -1,5 +1,6 @@
 ---
 title: Scanner
+description: Scanner and filter operations
 sort: 5
 ---
 

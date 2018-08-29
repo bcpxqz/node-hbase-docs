@@ -1,5 +1,6 @@
 ---
 title: Getting started
+description: Instructions on how to get up and running
 sort: 1
 ---
 
