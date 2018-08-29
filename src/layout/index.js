@@ -63,13 +63,13 @@ class Layout extends Component {
           onClickModal={ () => this.setState({open: false})}
           ref={ this._drawer }
           main={ () => (
-            <div>
+            <>
               <Header siteTitle={data.site.siteMetadata.title} onMenuClick={ toggle } />
               <Content page={page}>
                 {children}
               </Content>
               <Footer />
-            </div>
+            </>
           )}
           drawer={ () => (
             <Menu pages={pages} styles={styles.drawer} onClickLink={ clickLink } />
