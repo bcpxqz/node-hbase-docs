@@ -114,7 +114,7 @@ Will print something similar to:
 
 ## API: client.tables
 
-List tables.
+List of all non-system tables.
 
 ```javascript
 client.tables((error, tables) => {
