@@ -11,6 +11,13 @@ theme.overrideThemeStyles = ({ rhythm }, options) => ({
     borderBottom: '.5rem solid #fff',
     lineHeight: rhythm(1.5),
   },
+  'main a': {
+    textDecoration: 'underline',
+    color: '#000',
+  },
+  'main a:hover,a:active': {
+    color: '#d65947',
+  },
 })
 
 const typography = new Typography(theme)

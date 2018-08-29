@@ -29,12 +29,13 @@ class Content extends Component {
       // backgroundColor: '#fff',
       float: 'right',
       backgroundColor: '#fff',
+      marginBottom: '1rem',
       padding: '0 .4rem .4rem .4rem',
       '@media (max-width: 960px)': {
-      borderRadius: '0 0 1.8rem 1.8rem',
+        borderRadius: '0 0 1.8rem 1.8rem',
       },
       '@media (min-width: 960px)': {
-      borderRadius: '0 0 1.4rem 1.4rem',
+        borderRadius: '0 0 1.4rem 1.4rem',
       },
     },
     icon: {
@@ -78,8 +79,6 @@ class Content extends Component {
     },
     toc: {
       backgroundColor: '#fff',
-      // borderTop: '1px solid #E5E7EA',
-      // borderBottom: '1px solid #E5E7EA',
       '& > div': {
         padding: '1rem',
       },
