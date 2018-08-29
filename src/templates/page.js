@@ -19,7 +19,7 @@ export default function Template({
       >
         <html lang="en" />
       </Helmet>
-      <div
+      <article
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </Layout>
