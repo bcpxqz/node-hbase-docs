@@ -64,10 +64,10 @@ class Header extends Component {
       flex: '1 1 auto',
     },
     button: {
-      width: '36px !important',
-      height: '36px !important',
       '@media (max-width: 960px)': {
         marginLeft: '0 !important',
+        width: '36px !important',
+        height: '36px !important',
       },
       '@media (min-width: 960px)': {
         marginLeft: '1rem !important',
@@ -84,9 +84,6 @@ class Header extends Component {
         height: '2rem',
       },
     },
-  }
-  constructor (props) {
-    super(props)
   }
   render () {
     const {onMenuClick} = this.props
