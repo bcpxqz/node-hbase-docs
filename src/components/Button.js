@@ -82,9 +82,12 @@ class Button extends Component {
     },
     button: {
       cursor: 'pointer',
-      outline: 'none',
       border: 0,
       margin: 0,
+      ':focus': {
+        
+          outline: 'none',
+      }
     },
     link: {},
     label: {
