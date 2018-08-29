@@ -4,9 +4,9 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 // Local
+import Drawer from '../components/Drawer'
 import Header from './Header'
 import Content from './Content'
-import Drawer from './Drawer'
 import Menu from './Menu'
 import Footer from './Footer'
 
