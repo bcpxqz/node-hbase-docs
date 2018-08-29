@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { Link } from 'gatsby'
 import { css } from 'glamor'
 // Material UI
-import IconButton from '@material-ui/core/IconButton'
+import Button from '../components/Button'
 import Tooltip from '@material-ui/core/Tooltip'
 // Local
 import Logo from './Logo'
@@ -63,19 +63,30 @@ class Header extends Component {
     grow: {
       flex: '1 1 auto',
     },
-    icon: {
-      marginLeft: '1rem !important',
-    },
-    menu: {
+    button: {
+      width: '36px !important',
+      height: '36px !important',
       '@media (max-width: 960px)': {
-        width: '1.4rem',
-        height: '1.4rem',
+        marginLeft: '0 !important',
+      },
+      '@media (min-width: 960px)': {
+        marginLeft: '1rem !important',
+      },
+    },
+    icon: {
+      color: '#000',
+      '@media (max-width: 960px)': {
+        width: '1.3rem',
+        height: '1.3rem',
       },
       '@media (min-width: 960px)': {
         width: '2rem',
         height: '2rem',
       },
     },
+  }
+  constructor (props) {
+    super(props)
   }
   render () {
     const {onMenuClick} = this.props
@@ -90,44 +101,43 @@ class Header extends Component {
             <div css={styles.title}><Link to="/">Node.js HBase</Link></div>
             <div css={styles.grow} />
             <Tooltip id="header-bug" title="Report an issue" enterDelay={300}>
-              <IconButton
+              <Button
                 color="inherit"
                 aria-labelledby="header-bug"
                 href='https://github.com/adaltas/node-hbase/issues'
                 target="_blank"
                 rel="noopener"
-                className={css(styles.icon).toString()}
+                className={css(styles.button).toString()}
               >
-                <FaBug css={styles.menu} />
-              </IconButton>
+                <FaBug css={styles.icon} />
+              </Button>
             </Tooltip>
             <Tooltip id="header-github" title="Project on GitHub" enterDelay={300}>
-              <IconButton
+              <Button
                 color="inherit"
                 aria-labelledby="header-github"
                 href='https://github.com/adaltas/node-hbase'
                 target="_blank"
                 rel="noopener"
-                className={css(styles.icon).toString()}
+                className={css(styles.button).toString()}
               >
-                <FaGithub css={styles.menu} />
-              </IconButton>
+                <FaGithub css={styles.icon} />
+              </Button>
             </Tooltip>
             <Tooltip id="header-menu" title="Toggle the menu" enterDelay={300}>
-              <IconButton
-                color="inherit"
+              <Button
                 aria-labelledby="header-menu"
                 onClick={onMenuClick}
-                className={css(styles.icon).toString()}
+                className={css(styles.button).toString()}
               >
-                <FaBars css={styles.menu} />
-              </IconButton>
+                <FaBars css={styles.icon} />
+              </Button>
             </Tooltip>
           </div>
         </div>
       </div>
     )
   }
-} 
+}
 
 export default Header

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import ReactDom from 'react-dom'
 import {css} from 'glamor'
 // Material UI
-import IconButton from '@material-ui/core/IconButton'
+import Button from '../components/Button'
 import Tooltip from '@material-ui/core/Tooltip'
 // Prism
 require('prismjs/themes/prism-tomorrow.css')
@@ -116,7 +116,7 @@ class Content extends Component {
         <div css={styles.tools}>
           { page &&
             <Tooltip id="content-edit" title="Edit on GitHub" enterDelay={300}>
-              <IconButton
+              <Button
                 color="inherit"
                 href={page.fields.edit_url}
                 target="_blank"
@@ -129,7 +129,7 @@ class Content extends Component {
                 		l3.75,3.75l1.83-1.83c0.39-0.39,0.39-1.02,0-1.41l-2.34-2.34C18.17,3.09,17.92,3,17.66,3L17.66,3z M14.06,6.19L3,17.25V21h3.75
                 		L17.81,9.94L14.06,6.19L14.06,6.19z"/>
                 </svg>
-              </IconButton>
+              </Button>
             </Tooltip>
           }
           { page &&
@@ -138,7 +138,7 @@ class Content extends Component {
               title="Toggle table of content"
               enterDelay={300}
             >
-              <IconButton
+              <Button
                 color="inherit"
                 aria-labelledby="content-toc"
                 onClick={toggleToc}
@@ -149,7 +149,7 @@ class Content extends Component {
                 	<path fill="none" d="M0,0h24v24H0V0z"/>
                 	<path d="M3,9h14V7H3V9z M3,13h14v-2H3V13z M3,17h14v-2H3V17z M19,17h2v-2h-2V17z M19,7v2h2V7H19z M19,13h2v-2h-2V13z"/>
                 </svg>
-              </IconButton>
+              </Button>
             </Tooltip>
           }
         </div>
