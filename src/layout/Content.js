@@ -153,9 +153,9 @@ class Content extends Component {
             </Tooltip>
           }
         </div>
-        <main css={styles.main}>
+        <div css={styles.main}>
         {children}
-        </main>
+        </div>
       </div>
     )
   }
