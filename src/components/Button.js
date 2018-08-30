@@ -98,10 +98,10 @@ class Button extends Component {
     },
   }
   handleBlur (event) {
-    console.log('handleBlur')
+    // console.log('handleBlur')
   }
   handleFocus (event) {
-    console.log('handleFocus')
+    // console.log('handleFocus')
   }
   handleKeyDown (event) {
   }
@@ -115,26 +115,26 @@ class Button extends Component {
     }
   }
   handleMouseDown (event) {
-    console.log('handleMouseDown')
+    // console.log('handleMouseDown')
     event.persist();
     this.ripple.current.stop(event, () => {
       this.ripple.current.start(event);
     });
   }
   handleMouseLeave (event) {
-    console.log('handleMouseLeave')
+    // console.log('handleMouseLeave')
   }
   handleMouseUp (event) {
-    console.log('handleMouseUp')
+    // console.log('handleMouseUp')
   }
   handleTouchMove (event) {
-    console.log('handleTouchMove')
+    // console.log('handleTouchMove')
   }
   handleTouchEnd (event) {
-    console.log('handleTouchEnd')
+    // console.log('handleTouchEnd')
   }
   handleTouchStart (event) {
-    console.log('handleTouchStart')
+    // console.log('handleTouchStart')
     event.persist();
     this.ripple.current.stop(event, () => {
       this.ripple.current.start(event);
