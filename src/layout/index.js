@@ -62,7 +62,7 @@ class Layout extends Component {
           open={ this.state.open }
           onClickModal={ () => this.setState({open: false})}
           ref={ this._drawer }
-          main={ () => (
+          main={
             <>
               <Header siteTitle={data.site.siteMetadata.title} onMenuClick={ toggle } />
               <Content page={page}>
@@ -70,10 +70,10 @@ class Layout extends Component {
               </Content>
               <Footer />
             </>
-          )}
-          drawer={ () => (
+          }
+          drawer={
             <Menu pages={pages} styles={styles.drawer} onClickLink={ clickLink } />
-          )}
+          }
         />
       </>
     )

@@ -80,13 +80,11 @@ class Drawer extends Component {
   render() {
     const { drawer, main, open } = this.props
     const {isMobile} = this.state
-    const DrawerProps = drawer
-    const MainProps = main
     const isWindow = typeof window !== `undefined`
     return (
       <div>
         <main ref={this.main} css={[this.styles.main, isWindow && open && this.styles.mainOpen, isWindow && !open && this.styles.mainClose]}>
-          <MainProps />
+          {main}
         </main>
         { (isWindow && isMobile) ?
           <Modal
@@ -98,13 +96,13 @@ class Drawer extends Component {
             overlayClassName={css(this.styles.overlay).toString()}
             bodyOpenClassName={css(this.styles.body).toString()}
           >
-            <DrawerProps />
+            {drawer}
           </Modal>
           :
           <div
             css={[this.styles.drawer, isWindow && open && this.styles.drawerOpen, isWindow && !open && this.styles.drawerClose]}
           >
-            <DrawerProps />
+            {drawer}
           </div>
         }
       </div>
