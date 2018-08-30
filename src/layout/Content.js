@@ -116,7 +116,7 @@ class Content extends Component {
           { page &&
             <Button
               color="inherit"
-              aria-labelledby="content-edit"
+              aria-label="content-edit"
               data-for='content-tooltip'
               data-tip="Edit on GitHub"
               href={page.fields.edit_url}
@@ -134,7 +134,7 @@ class Content extends Component {
           { page &&
             <Button
               color="inherit"
-              aria-labelledby="content-toc"
+              aria-label="content-toc"
               data-for='content-tooltip'
               data-tip="Toggle table of content"
               onClick={toggleToc}
