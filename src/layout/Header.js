@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import { Link } from 'gatsby'
 import { css } from 'glamor'
-// Material UI
+import ReactTooltip from 'react-tooltip'
 import Button from '../components/Button'
-import Tooltip from '@material-ui/core/Tooltip'
 // Local
 import Logo from './Logo'
 import { FaBug, FaGithub, FaBars } from 'react-icons/fa';
@@ -97,39 +96,40 @@ class Header extends Component {
           <div css={[styles.mainContainer]}>
             <div css={styles.title}><Link to="/">Node.js HBase</Link></div>
             <div css={styles.grow} />
-            <Tooltip id="header-bug" title="Report an issue" enterDelay={300}>
-              <Button
-                color="inherit"
-                aria-labelledby="header-bug"
-                href='https://github.com/adaltas/node-hbase/issues'
-                target="_blank"
-                rel="noopener"
-                className={css(styles.button).toString()}
-              >
-                <FaBug css={styles.icon} />
-              </Button>
-            </Tooltip>
-            <Tooltip id="header-github" title="Project on GitHub" enterDelay={300}>
-              <Button
-                color="inherit"
-                aria-labelledby="header-github"
-                href='https://github.com/adaltas/node-hbase'
-                target="_blank"
-                rel="noopener"
-                className={css(styles.button).toString()}
-              >
-                <FaGithub css={styles.icon} />
-              </Button>
-            </Tooltip>
-            <Tooltip id="header-menu" title="Toggle the menu" enterDelay={300}>
-              <Button
-                aria-labelledby="header-menu"
-                onClick={onMenuClick}
-                className={css(styles.button).toString()}
-              >
-                <FaBars css={styles.icon} />
-              </Button>
-            </Tooltip>
+            <Button
+              color="inherit"
+              aria-label="header-bug"
+              data-for='header-menu'
+              data-tip='Report an issue'
+              href='https://github.com/adaltas/node-hbase/issues'
+              target="_blank"
+              rel="noopener"
+              className={css(styles.button).toString()}
+            >
+              <FaBug css={styles.icon} />
+            </Button>
+            <Button
+              color="inherit"
+              aria-label="header-github"
+              data-for='header-menu'
+              data-tip='Toggle the menu'
+              href='https://github.com/adaltas/node-hbase'
+              target="_blank"
+              rel="noopener"
+              className={css(styles.button).toString()}
+            >
+              <FaGithub css={styles.icon} />
+            </Button>
+            <Button
+              aria-label="header-menu"
+              data-for='header-menu'
+              data-tip='Toggle the menu'
+              onClick={onMenuClick}
+              className={css(styles.button).toString()}
+            >
+              <FaBars css={styles.icon} />
+            </Button>
+            <ReactTooltip id="header-menu" delayShow={300} place="bottom" effect="solid" />
           </div>
         </div>
       </div>

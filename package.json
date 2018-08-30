@@ -4,9 +4,6 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@material-ui/core": "^1.4.2",
-    "@material-ui/docs": "^1.0.0-alpha.4",
-    "@material-ui/icons": "^2.0.0",
     "gatsby": "next",
     "gatsby-plugin-catch-links": "^2.0.2-beta.8",
     "gatsby-plugin-glamor": "^2.0.0-rc.0",
@@ -24,6 +21,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.0.5",
     "react-modal": "^3.5.1",
+    "react-tooltip": "^3.6.1",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
     "typography-theme-grand-view": "^0.15.10"
