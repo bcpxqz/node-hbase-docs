@@ -20,7 +20,7 @@ class Menu extends Component {
       '& h1': {
         margin: '0 0 .5rem 0',
         padding: '0 1rem 0 1rem',
-        color: '#9B9B9B',
+        color: '#000',
         fontFamily: 'Arvo sans-serif',
         fontWeight: 'normal',
         fontSize: '1.4rem',
