@@ -90,14 +90,14 @@ class Header extends Component {
     return (
       <header css={styles.container}>
         <div css={[styles.item, styles.logoItem]}>
-          <Link to="/">
+          <Link to="/" title="Visit homepage">
             <Logo />
           </Link>
         </div>
         <div css={[styles.item, styles.mainItem]}>
           <div css={[styles.mainContainer]}>
             <div css={styles.title}>
-              <Link to="/">Node.js HBase</Link>
+              <Link to="/" title="Visit homepage">Node.js HBase</Link>
             </div>
             <div css={styles.grow} />
             <Button
