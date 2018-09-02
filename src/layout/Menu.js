@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {Link} from 'gatsby'
-import {css} from 'glamor'
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import { css } from 'glamor'
 
 class Menu extends Component {
   styles = {
@@ -12,7 +12,7 @@ class Menu extends Component {
       borderRight: '1rem solid #fff',
       '& div': {
         boxSizing: 'border-box',
-        width: '100%'
+        width: '100%',
       },
       '& nav': {
         margin: '0 0 1rem 0',
@@ -28,7 +28,7 @@ class Menu extends Component {
       },
       '& ul': {
         margin: 0,
-      }
+      },
     },
     linkContainer: {
       margin: 0,
@@ -54,63 +54,68 @@ class Menu extends Component {
         color: '#34BF1C',
         backgroundColor: 'inherit',
       },
-    }
+    },
   }
-  render () {
-    const {pages, onClickLink} = this.props
-    const {styles} = this
+  render() {
+    const { pages, onClickLink } = this.props
+    const { styles } = this
     return (
       <aside css={[styles.root, this.props.styles]}>
         <nav>
           <h1>Lean more</h1>
           <ul>
-          {[
-            (<li key='/' css={styles.li}>
-              <Link
-                to='/'
-                className={css(styles.link).toString()}
-                activeClassName={css(styles.linkActive).toString()}
-                onClick={onClickLink}>
-                Homepage
-              </Link>
-            </li>),
-            ...pages.map( (page) =>
-              /^\/learn/.test(page.slug) &&
-              <li key={page.slug} css={styles.li}>
+            {[
+              <li key="/" css={styles.li}>
                 <Link
-                  to={page.slug}
+                  to="/"
                   className={css(styles.link).toString()}
                   activeClassName={css(styles.linkActive).toString()}
-                  onClick={onClickLink}>
-                  {page.title}
+                  onClick={onClickLink}
+                >
+                  Homepage
                 </Link>
-              </li>
-            )
-          ]}
+              </li>,
+              ...pages.map(
+                page =>
+                  /^\/learn/.test(page.slug) && (
+                    <li key={page.slug} css={styles.li}>
+                      <Link
+                        to={page.slug}
+                        className={css(styles.link).toString()}
+                        activeClassName={css(styles.linkActive).toString()}
+                        onClick={onClickLink}
+                      >
+                        {page.title}
+                      </Link>
+                    </li>
+                  )
+              ),
+            ]}
           </ul>
         </nav>
         <nav>
           <h1>API</h1>
           <ul>
-          {
-            pages.map( (page) =>
-              /^\/api/.test(page.slug) &&
-              <li key={page.slug} css={styles.li}>
-                <Link
-                  to={page.slug}
-                  className={css(styles.link).toString()}
-                  activeClassName={css(styles.linkActive).toString()}
-                  onClick={onClickLink}>
-                  {page.title}
-                </Link>
-              </li>
-            )
-          }
+            {pages.map(
+              page =>
+                /^\/api/.test(page.slug) && (
+                  <li key={page.slug} css={styles.li}>
+                    <Link
+                      to={page.slug}
+                      className={css(styles.link).toString()}
+                      activeClassName={css(styles.linkActive).toString()}
+                      onClick={onClickLink}
+                    >
+                      {page.title}
+                    </Link>
+                  </li>
+                )
+            )}
           </ul>
         </nav>
       </aside>
     )
   }
-} 
+}
 
 export default Menu

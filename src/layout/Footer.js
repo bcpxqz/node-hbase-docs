@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Link} from 'gatsby'
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
 
 class Footer extends Component {
   styles = {
@@ -68,28 +68,62 @@ class Footer extends Component {
     },
   }
   render() {
-    const {styles} = this
+    const { styles } = this
     return (
       <footer css={styles.root}>
         <nav css={styles.navigate}>
           <h1>Navigate</h1>
           <ul>
-            <li><Link to="/learn/quickstart/">Getting Started</Link></li>
-            <li><Link to="/learn/changelog/">Changelog</Link></li>
-            <li><Link to="/learn/license/">License</Link></li>
+            <li>
+              <Link to="/learn/quickstart/">Getting Started</Link>
+            </li>
+            <li>
+              <Link to="/learn/changelog/">Changelog</Link>
+            </li>
+            <li>
+              <Link to="/learn/license/">License</Link>
+            </li>
           </ul>
         </nav>
         <nav css={styles.contribute}>
           <h1>Contribute</h1>
           <ul>
-            <li><Link to="/learn/contribute/">How to contribute</Link></li>
-            <li><a href="https://github.com/adaltas/node-hbase" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://github.com/adaltas/node-hbase/issues" target="_blank" rel="noopener">Issue Tracker</a></li>
+            <li>
+              <Link to="/learn/contribute/">How to contribute</Link>
+            </li>
+            <li>
+              <a
+                href="https://github.com/adaltas/node-hbase"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/adaltas/node-hbase/issues"
+                target="_blank"
+                rel="noopener"
+              >
+                Issue Tracker
+              </a>
+            </li>
           </ul>
         </nav>
         <div css={styles.about}>
           <h1>About</h1>
-          <p>Node.js HBase is an open source product hosted on <a href="https://www.github.com" target="_blank" rel="noopener">GitHub</a> and developed by <a href="http://www.adaltas.com" target="_blank" rel="noopener">Adaltas</a>.</p>
+          <p>
+            Node.js HBase is an open source product hosted on{' '}
+            <a href="https://www.github.com" target="_blank" rel="noopener">
+              GitHub
+            </a>{' '}
+            and developed by{' '}
+            <a href="http://www.adaltas.com" target="_blank" rel="noopener">
+              Adaltas
+            </a>
+            .
+          </p>
         </div>
       </footer>
     )

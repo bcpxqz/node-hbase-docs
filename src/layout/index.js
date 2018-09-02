@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
@@ -21,30 +21,30 @@ class Layout extends Component {
     },
   }
   constructor(props) {
-    super(props);
-    this._drawer = React.createRef();
+    super(props)
+    this._drawer = React.createRef()
     this.toggle = this.toggle.bind(this)
-    this.state = {open: true, breakpoint: 960}
+    this.state = { open: true, breakpoint: 960 }
   }
-  componentDidMount(){
-    if(window.innerWidth < this.state.breakpoint){
+  componentDidMount() {
+    if (window.innerWidth < this.state.breakpoint) {
       this.setState({ open: false })
     }
   }
   toggle() {
-    this.setState({open: !this.state.open})
+    this.setState({ open: !this.state.open })
   }
   render() {
     const { children, data, page } = this.props
-    const {styles} = this
+    const { styles } = this
     const toggle = this.toggle
     const clickLink = () => {
-      if(window.innerWidth < this.state.breakpoint){
+      if (window.innerWidth < this.state.breakpoint) {
         this.setState({ open: false })
       }
     }
-    const pages = data.pages.edges.map( (page) => {
-      return {...page.node.fields, ...page.node.frontmatter}
+    const pages = data.pages.edges.map(page => {
+      return { ...page.node.fields, ...page.node.frontmatter }
     })
     return (
       <>
@@ -59,20 +59,25 @@ class Layout extends Component {
         </Helmet>
         <Drawer
           breakpoint={this.state.breakpoint}
-          open={ this.state.open }
-          onClickModal={ () => this.setState({open: false})}
-          ref={ this._drawer }
+          open={this.state.open}
+          onClickModal={() => this.setState({ open: false })}
+          ref={this._drawer}
           main={
             <>
-              <Header siteTitle={data.site.siteMetadata.title} onMenuClick={ toggle } />
-              <Content page={page}>
-                {children}
-              </Content>
+              <Header
+                siteTitle={data.site.siteMetadata.title}
+                onMenuClick={toggle}
+              />
+              <Content page={page}>{children}</Content>
               <Footer />
             </>
           }
           drawer={
-            <Menu pages={pages} styles={styles.drawer} onClickLink={ clickLink } />
+            <Menu
+              pages={pages}
+              styles={styles.drawer}
+              onClickLink={clickLink}
+            />
           }
         />
       </>
@@ -107,9 +112,7 @@ const QueryLayout = props => (
         }
       }
     `}
-    render={data => (
-      <Layout data={data} {...props} />
-    )}
+    render={data => <Layout data={data} {...props} />}
   />
 )
 

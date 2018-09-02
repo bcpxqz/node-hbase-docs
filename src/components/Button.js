@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {css} from 'glamor'
+import { css } from 'glamor'
 
 class Ripple extends Component {
   styles = {
@@ -17,7 +17,7 @@ class Ripple extends Component {
     },
     child: {
       transform: 'scale(.0)',
-      opacity: .5,
+      opacity: 0.5,
       display: 'block',
       width: '100%',
       height: '100%',
@@ -32,28 +32,28 @@ class Ripple extends Component {
   state = {
     active: false,
   }
-  start(event){
+  start(event) {
     this.child.current.classList.add(css(this.styles.active).toString())
     this.startTimer = setTimeout(() => {
       this.child.current.classList.remove(css(this.styles.active).toString())
-    }, 200);
+    }, 200)
   }
-  stop(event, callback){
+  stop(event, callback) {
     this.child.current.classList.remove(css(this.styles.active).toString())
-    if(callback) callback()
+    if (callback) callback()
   }
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.child = React.createRef()
     this.start = this.start.bind(this)
     this.stop = this.stop.bind(this)
   }
-  render(){
-    const {styles} = this
+  render() {
+    const { styles } = this
     return (
-    <span css={[styles.ripple, this.state.active && styles.active]}>
-      <span ref={this.child} css={styles.child} />
-    </span>
+      <span css={[styles.ripple, this.state.active && styles.active]}>
+        <span ref={this.child} css={styles.child} />
+      </span>
     )
   }
 }
@@ -85,9 +85,8 @@ class Button extends Component {
       border: 0,
       margin: 0,
       ':focus': {
-        
-          outline: 'none',
-      }
+        outline: 'none',
+      },
     },
     link: {},
     label: {
@@ -97,48 +96,47 @@ class Button extends Component {
       justifyContent: 'inherit',
     },
   }
-  handleBlur (event) {
+  handleBlur(event) {
     // console.log('handleBlur')
   }
-  handleFocus (event) {
+  handleFocus(event) {
     // console.log('handleFocus')
   }
-  handleKeyDown (event) {
-  }
-  handleKeyUp (event) {
+  handleKeyDown(event) {}
+  handleKeyUp(event) {
     const key = event.key
-    if(key === 'space' || key === 'enter'){
-      event.persist();
+    if (key === 'space' || key === 'enter') {
+      event.persist()
       this.ripple.current.stop(event, () => {
-        this.ripple.current.start(event);
-      });
+        this.ripple.current.start(event)
+      })
     }
   }
-  handleMouseDown (event) {
+  handleMouseDown(event) {
     // console.log('handleMouseDown')
-    event.persist();
+    event.persist()
     this.ripple.current.stop(event, () => {
-      this.ripple.current.start(event);
-    });
+      this.ripple.current.start(event)
+    })
   }
-  handleMouseLeave (event) {
+  handleMouseLeave(event) {
     // console.log('handleMouseLeave')
   }
-  handleMouseUp (event) {
+  handleMouseUp(event) {
     // console.log('handleMouseUp')
   }
-  handleTouchMove (event) {
+  handleTouchMove(event) {
     // console.log('handleTouchMove')
   }
-  handleTouchEnd (event) {
+  handleTouchEnd(event) {
     // console.log('handleTouchEnd')
   }
-  handleTouchStart (event) {
+  handleTouchStart(event) {
     // console.log('handleTouchStart')
-    event.persist();
+    event.persist()
     this.ripple.current.stop(event, () => {
-      this.ripple.current.start(event);
-    });
+      this.ripple.current.start(event)
+    })
   }
   constructor(props) {
     super(props)
@@ -146,8 +144,8 @@ class Button extends Component {
     this.ripple = React.createRef()
     // this.handleMouseDown = this.handleMouseDown.bind(this)
   }
-  componentDidMount(){
-      if(window.innerWidth < this.props.breakpoint){
+  componentDidMount() {
+    if (window.innerWidth < this.props.breakpoint) {
       this.setState({ isMobile: true })
     }
   }
@@ -157,12 +155,17 @@ class Button extends Component {
   //   console.log('this.ripple.start', this.ripple.start())
   // }
   render() {
-    const {children, disabled, title, tabIndex, href, role, ...props} = this.props
-    const {styles} = this
-    const label =
-      <span css={styles.label}>
-        {children}
-      </span>
+    const {
+      children,
+      disabled,
+      title,
+      tabIndex,
+      href,
+      role,
+      ...props
+    } = this.props
+    const { styles } = this
+    const label = <span css={styles.label}>{children}</span>
     // const ripple =
     //   <span css={styles.ripple} />
     const Component = href ? 'a' : 'button'
@@ -170,7 +173,7 @@ class Button extends Component {
       title: title,
       tabIndex: tabIndex,
     }
-    if(href) {
+    if (href) {
       componentProps.href = href
       componentProps.role = role
     } else {
@@ -204,7 +207,7 @@ class Button extends Component {
         {label}
         <Ripple ref={this.ripple} />
       </Component>
-     )
+    )
   }
 }
 

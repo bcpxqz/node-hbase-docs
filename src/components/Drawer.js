@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Modal from 'react-modal'
-import {css} from 'glamor'
+import { css } from 'glamor'
 
 class Drawer extends Component {
   styles = {
@@ -12,7 +12,7 @@ class Drawer extends Component {
       position: 'relative',
       margin: 0,
       paddingLeft: 250,
-      backgroundColor: "#F2F2F2",
+      backgroundColor: '#F2F2F2',
       '@media (max-width: 960px)': {
         paddingLeft: 0,
       },
@@ -54,10 +54,9 @@ class Drawer extends Component {
       '.ReactModal__Content--after-open': {
         left: 0,
         transition: 'left 225ms cubic-bezier(0.0, 0, 0.2, 1)',
-      }
+      },
     },
-    drawerOpenModal: {
-    },
+    drawerOpenModal: {},
     overlay: {
       position: 'fixed',
       top: 0,
@@ -65,46 +64,64 @@ class Drawer extends Component {
       right: 0,
       bottom: 0,
       backgroundColor: 'rgba(0, 0, 0, .6)',
-    }
+    },
   }
   constructor(props) {
     super(props)
     this.state = { isMobile: false }
     this.main = React.createRef()
   }
-  componentDidMount(){
-      if(window.innerWidth < this.props.breakpoint){
+  componentDidMount() {
+    if (window.innerWidth < this.props.breakpoint) {
       this.setState({ isMobile: true })
     }
   }
   render() {
     const { drawer, main, open } = this.props
-    const {isMobile} = this.state
+    const { isMobile } = this.state
     const isWindow = typeof window !== `undefined`
     return (
       <div>
-        <main ref={this.main} css={[this.styles.main, isWindow && open && this.styles.mainOpen, isWindow && !open && this.styles.mainClose]}>
+        <main
+          ref={this.main}
+          css={[
+            this.styles.main,
+            isWindow && open && this.styles.mainOpen,
+            isWindow && !open && this.styles.mainClose,
+          ]}
+        >
           {main}
         </main>
-        { (isWindow && isMobile) ?
+        {isWindow && isMobile ? (
           <Modal
-            isOpen={ open }
-            onRequestClose={ this.props.onClickModal }
-            aria={{labelledby: "Menu", describedby: "Navigate through the site"}}
+            isOpen={open}
+            onRequestClose={this.props.onClickModal}
+            aria={{
+              labelledby: 'Menu',
+              describedby: 'Navigate through the site',
+            }}
             appElement={this.main.current}
-            className={css([this.styles.drawer, isWindow && open && this.styles.drawerOpen, isWindow && !open && this.styles.drawerClose]).toString()}
+            className={css([
+              this.styles.drawer,
+              isWindow && open && this.styles.drawerOpen,
+              isWindow && !open && this.styles.drawerClose,
+            ]).toString()}
             overlayClassName={css(this.styles.overlay).toString()}
             bodyOpenClassName={css(this.styles.body).toString()}
           >
             {drawer}
           </Modal>
-          :
+        ) : (
           <div
-            css={[this.styles.drawer, isWindow && open && this.styles.drawerOpen, isWindow && !open && this.styles.drawerClose]}
+            css={[
+              this.styles.drawer,
+              isWindow && open && this.styles.drawerOpen,
+              isWindow && !open && this.styles.drawerClose,
+            ]}
           >
             {drawer}
           </div>
-        }
+        )}
       </div>
     )
   }

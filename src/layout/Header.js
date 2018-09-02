@@ -1,19 +1,19 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import { css } from 'glamor'
 import ReactTooltip from 'react-tooltip'
 import Button from '../components/Button'
 // Local
 import Logo from './Logo'
-import { FaBug, FaGithub, FaBars } from 'react-icons/fa';
+import { FaBug, FaGithub, FaBars } from 'react-icons/fa'
 
 class Header extends Component {
   styles = {
     container: {
       display: 'flex',
       '@media (max-width: 960px)': {
-        borderBottom: "1rem solid #fff",
-      }
+        borderBottom: '1rem solid #fff',
+      },
     },
     item: {
       boxSizing: 'border-box',
@@ -25,15 +25,15 @@ class Header extends Component {
       padding: '.5rem 2rem 0 2rem',
       '@media (max-width: 960px)': {
         padding: '.5rem .5rem 0 .5rem',
-      }
+      },
     },
     mainItem: {
       maxWidth: '85%',
       flexBasis: '85%',
-      alignSelf: "flex-end",
+      alignSelf: 'flex-end',
       '@media (min-width: 960px)': {
-        borderBottom: "1rem solid #fff",
-      }
+        borderBottom: '1rem solid #fff',
+      },
     },
     mainContainer: {
       display: 'flex',
@@ -84,24 +84,28 @@ class Header extends Component {
       },
     },
   }
-  render () {
-    const {onMenuClick} = this.props
-    const {styles} = this
+  render() {
+    const { onMenuClick } = this.props
+    const { styles } = this
     return (
       <div css={styles.container}>
         <div css={[styles.item, styles.logoItem]}>
-          <Link to="/"><Logo /></Link>
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <div css={[styles.item, styles.mainItem]}>
           <div css={[styles.mainContainer]}>
-            <div css={styles.title}><Link to="/">Node.js HBase</Link></div>
+            <div css={styles.title}>
+              <Link to="/">Node.js HBase</Link>
+            </div>
             <div css={styles.grow} />
             <Button
               color="inherit"
               aria-label="header-bug"
-              data-for='header-menu'
-              data-tip='Report an issue'
-              href='https://github.com/adaltas/node-hbase/issues'
+              data-for="header-menu"
+              data-tip="Report an issue"
+              href="https://github.com/adaltas/node-hbase/issues"
               target="_blank"
               rel="noopener"
               className={css(styles.button).toString()}
@@ -111,9 +115,9 @@ class Header extends Component {
             <Button
               color="inherit"
               aria-label="header-github"
-              data-for='header-menu'
-              data-tip='Toggle the menu'
-              href='https://github.com/adaltas/node-hbase'
+              data-for="header-menu"
+              data-tip="Toggle the menu"
+              href="https://github.com/adaltas/node-hbase"
               target="_blank"
               rel="noopener"
               className={css(styles.button).toString()}
@@ -122,14 +126,19 @@ class Header extends Component {
             </Button>
             <Button
               aria-label="header-menu"
-              data-for='header-menu'
-              data-tip='Toggle the menu'
+              data-for="header-menu"
+              data-tip="Toggle the menu"
               onClick={onMenuClick}
               className={css(styles.button).toString()}
             >
               <FaBars css={styles.icon} />
             </Button>
-            <ReactTooltip id="header-menu" delayShow={300} place="bottom" effect="solid" />
+            <ReactTooltip
+              id="header-menu"
+              delayShow={300}
+              place="bottom"
+              effect="solid"
+            />
           </div>
         </div>
       </div>
