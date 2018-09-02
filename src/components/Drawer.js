@@ -77,8 +77,8 @@ class Drawer extends Component {
     }
   }
   render() {
-    const { styles } = styles
-    const { drawer, main, open } = this.props
+    const { props, styles } = this
+    const { drawer, main, open } = props
     const { isMobile } = this.state
     const isWindow = typeof window !== `undefined`
     return (
