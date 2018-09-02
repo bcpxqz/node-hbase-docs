@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "hbase-docs",
+  "description": "HBase client for Node.js official documentation website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "David Worms <david@adaltas.com>",
   "dependencies": {
     "gatsby": "next",
     "gatsby-plugin-catch-links": "^2.0.2-beta.8",
@@ -28,7 +28,7 @@
     "typography-theme-grand-view": "^0.15.10"
   },
   "keywords": [
-    "gatsby"
+    "hbase, node.js, driver, documentation, website, gatsby"
   ],
   "license": "MIT",
   "scripts": {
@@ -40,10 +40,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.13.7"
+    "prettier": "^1.14.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/adaltas/node-hbase-docs"
   }
 }
