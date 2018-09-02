@@ -77,6 +77,7 @@ class Drawer extends Component {
     }
   }
   render() {
+    const { styles } = styles
     const { drawer, main, open } = this.props
     const { isMobile } = this.state
     const isWindow = typeof window !== `undefined`
@@ -85,9 +86,9 @@ class Drawer extends Component {
         <div
           ref={this.main}
           css={[
-            this.styles.main,
-            isWindow && open && this.styles.mainOpen,
-            isWindow && !open && this.styles.mainClose,
+            styles.main,
+            isWindow && open && styles.mainOpen,
+            isWindow && !open && styles.mainClose,
           ]}
         >
           {main}
@@ -102,21 +103,21 @@ class Drawer extends Component {
             }}
             appElement={this.main.current}
             className={css([
-              this.styles.drawer,
-              isWindow && open && this.styles.drawerOpen,
-              isWindow && !open && this.styles.drawerClose,
+              styles.drawer,
+              isWindow && open && styles.drawerOpen,
+              isWindow && !open && styles.drawerClose,
             ]).toString()}
-            overlayClassName={css(this.styles.overlay).toString()}
-            bodyOpenClassName={css(this.styles.body).toString()}
+            overlayClassName={css(styles.overlay).toString()}
+            bodyOpenClassName={css(styles.body).toString()}
           >
             {drawer}
           </Modal>
         ) : (
           <div
             css={[
-              this.styles.drawer,
-              isWindow && open && this.styles.drawerOpen,
-              isWindow && !open && this.styles.drawerClose,
+              styles.drawer,
+              isWindow && open && styles.drawerOpen,
+              isWindow && !open && styles.drawerClose,
             ]}
           >
             {drawer}

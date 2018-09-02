@@ -22,7 +22,6 @@ class Layout extends Component {
   }
   constructor(props) {
     super(props)
-    this._drawer = React.createRef()
     this.toggle = this.toggle.bind(this)
     this.state = { open: true, breakpoint: 960 }
   }
@@ -38,7 +37,7 @@ class Layout extends Component {
     const { children, data, page } = this.props
     const { styles } = this
     const toggle = this.toggle
-    const clickLink = () => {
+    const handleClickLink = () => {
       if (window.innerWidth < this.state.breakpoint) {
         this.setState({ open: false })
       }
@@ -63,7 +62,6 @@ class Layout extends Component {
           breakpoint={this.state.breakpoint}
           open={this.state.open}
           onClickModal={() => this.setState({ open: false })}
-          ref={this._drawer}
           main={
             <>
               <Header
@@ -78,7 +76,7 @@ class Layout extends Component {
             <Menu
               pages={pages}
               styles={styles.drawer}
-              onClickLink={clickLink}
+              onClickLink={handleClickLink}
             />
           }
         />
