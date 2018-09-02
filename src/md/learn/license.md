@@ -1,6 +1,7 @@
 ---
 title: License (MIT)
 description: Content of the MIT license
+keywords: license, MIT, adaltas
 sort: 3
 community: true
 ---

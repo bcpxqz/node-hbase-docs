@@ -1,27 +1,14 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Helmet from 'react-helmet'
+import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../layout'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { page } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = page
   return (
     <Layout page={page}>
-      <Helmet
-        title={'Node HBase - ' + frontmatter.title}
-        meta={[
-          { name: 'description', content: frontmatter.description },
-          { name: 'keywords', content: frontmatter.keywords },
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
-      <article
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <article dangerouslySetInnerHTML={{ __html: page.html }} />
     </Layout>
   )
 }
@@ -32,6 +19,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        description
+        keywords
       }
       fields {
         edit_url

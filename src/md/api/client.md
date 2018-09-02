@@ -1,6 +1,7 @@
 ---
 title: Client
 description: Retrieve server information and API entry point
+keywords: hbase, client, server information, version, status, cluster, tables, namespaces
 sort: 2
 ---
 

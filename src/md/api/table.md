@@ -1,6 +1,7 @@
 ---
 title: Table
 description: Create, modify and delete HBase tables
+keywords: hbase, table, schema, regions, region servers, exists, create, delete 
 sort: 3
 ---
 

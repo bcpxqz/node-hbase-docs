@@ -1,6 +1,4 @@
-
-
-import Typography from "typography";
+import Typography from 'typography'
 import theme from 'typography-theme-grand-view'
 
 theme.overrideThemeStyles = ({ rhythm }, options) => ({
@@ -22,4 +20,4 @@ theme.overrideThemeStyles = ({ rhythm }, options) => ({
 
 const typography = new Typography(theme)
 
-export default typography;
+export default typography

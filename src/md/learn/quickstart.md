@@ -1,6 +1,7 @@
 ---
 title: Getting started
 description: Instructions on how to get up and running
+keywords: hbase, tutorial, quickstart, install, configuration, example
 sort: 1
 ---
 

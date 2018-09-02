@@ -1,6 +1,7 @@
 ---
 title: Scanner
 description: Scanner and filter operations
+keywords: hbase, scanner, filter, startRow, endRow, columns, batch, maxVersions, startTime, endTime, encoding
 sort: 5
 ---
 

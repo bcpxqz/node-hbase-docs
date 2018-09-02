@@ -1,6 +1,7 @@
 ---
 title: Contribute
 description: How to contribute to the project
+keywords: contribute, git, github, open source, documentation, versioning, pull requests, bug, issues
 sort: 4
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Changelog
 description: Detailed project history by releases
+keywords: hbase, changelog, fix, features, incompatibilities, migration, update, upgrade
 sort: 2
 ---
 

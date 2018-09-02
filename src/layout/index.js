@@ -48,15 +48,17 @@ class Layout extends Component {
     })
     return (
       <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
+        { page &&
+          <Helmet
+            title={'Node HBase - ' + page.frontmatter.title}
+            meta={[
+              { name: 'description', content: page.frontmatter.description },
+              { name: 'keywords', content: page.frontmatter.keywords },
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+        }
         <Drawer
           breakpoint={this.state.breakpoint}
           open={this.state.open}

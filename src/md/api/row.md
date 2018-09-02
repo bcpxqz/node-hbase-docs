@@ -1,6 +1,7 @@
 ---
 title: Row
 description: CRUD operations on rows and columns
+keywords: hbase, raw, column, value, version, delete, add, get, set, put, delete, exists
 sort: 4
 ---
 

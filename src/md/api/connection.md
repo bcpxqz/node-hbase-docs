@@ -1,6 +1,7 @@
 ---
 title: Connection
 description: HTTP REST requests for HBase
+keywords: connection, rest, api, http, rest
 sort: 6
 ---
 
