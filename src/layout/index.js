@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from 'gatsby'
 // Local
 import Drawer from '../components/Drawer'
 import Header from './Header'
-import Content from './Content'
+import Main from './Main'
 import Menu from './Menu'
 import Footer from './Footer'
 import {} from '../fonts/index.css'
@@ -70,7 +70,7 @@ class Layout extends Component {
                 siteTitle={data.site.siteMetadata.title}
                 onMenuClick={toggle}
               />
-              <Content page={page}>{children}</Content>
+              <Main page={page}>{children}</Main>
               <Footer />
             </>
           }

@@ -88,7 +88,7 @@ class Header extends Component {
     const { onMenuClick } = this.props
     const { styles } = this
     return (
-      <div css={styles.container}>
+      <header css={styles.container}>
         <div css={[styles.item, styles.logoItem]}>
           <Link to="/">
             <Logo />
@@ -141,7 +141,7 @@ class Header extends Component {
             />
           </div>
         </div>
-      </div>
+      </header>
     )
   }
 }

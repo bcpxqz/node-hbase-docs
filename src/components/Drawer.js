@@ -81,8 +81,8 @@ class Drawer extends Component {
     const { isMobile } = this.state
     const isWindow = typeof window !== `undefined`
     return (
-      <div>
-        <main
+      <>
+        <div
           ref={this.main}
           css={[
             this.styles.main,
@@ -91,7 +91,7 @@ class Drawer extends Component {
           ]}
         >
           {main}
-        </main>
+        </div>
         {isWindow && isMobile ? (
           <Modal
             isOpen={open}
@@ -122,7 +122,7 @@ class Drawer extends Component {
             {drawer}
           </div>
         )}
-      </div>
+      </>
     )
   }
 }

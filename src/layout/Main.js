@@ -59,7 +59,7 @@ class Content extends Component {
         height: '2.4rem !important',
       },
     },
-    main: {
+    article: {
       clear: 'right',
       '& .toc': {
         backgroundColor: '#fff',
@@ -110,7 +110,7 @@ class Content extends Component {
       tocNode.style.display = display === 'none' ? 'block' : 'none'
     }
     return (
-      <div ref={this.content} css={styles.root}>
+      <main ref={this.content} css={styles.root}>
         <div ref={this.toc} css={styles.toc} />
         <div css={styles.tools}>
           {page && (
@@ -156,8 +156,8 @@ class Content extends Component {
             effect="solid"
           />
         </div>
-        <div css={styles.main}>{children}</div>
-      </div>
+        <article css={styles.article}>{children}</article>
+      </main>
     )
   }
 }
