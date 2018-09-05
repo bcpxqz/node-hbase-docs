@@ -2,7 +2,8 @@
 /* @import url('./font.arvo.700.woff2'); */
 @font-face {
   font-family: "Arvo";
-  src: local("Arvo"), url("./font.arvo.400.woff2") format("woff2");
+  src: local("Arvo"), 
+  url("../fonts/font.arvo.400.woff2") format("woff2");
   font-style: normal; 
   font-weight: 400;
   font-display: optional;
@@ -11,7 +12,7 @@
 @font-face {
   font-family: "Arvo";
   src: local("Arvo Bold"), local("Arvo-Bold"), 
-  url("./font.arvo.700.woff2") format("woff2");
+  url("../fonts/font.arvo.700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: optional;
@@ -20,7 +21,7 @@
 @font-face {
   font-family: "Arvo";
   src: local("Arvo Bold"), local("Arvo-Bold"), 
-  url("./font.arvo.700.woff2") format("woff2");
+  url("../fonts/font.arvo.700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: optional;
@@ -28,7 +29,8 @@
 }
 @font-face {
   font-family: "Montserrat";
-  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("font.montserrat.700.woff2") format("woff2");
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), 
+  url("../fonts/font.montserrat.700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: optional;
@@ -56,3 +58,7 @@
   font-weight: 700;
   unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 } */
+
+html, body {
+  background-color: #F2F2F2;
+}

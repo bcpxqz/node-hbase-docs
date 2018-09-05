@@ -12,7 +12,6 @@ class Drawer extends Component {
       position: 'relative',
       margin: 0,
       paddingLeft: 250,
-      backgroundColor: '#F2F2F2',
       '@media (max-width: 960px)': {
         paddingLeft: 0,
       },
