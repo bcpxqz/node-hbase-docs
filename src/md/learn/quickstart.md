@@ -13,7 +13,7 @@ HBase is part of the Hadoop ecosystem from the Apache Software Foundation. It is
 
 ## Installing HBase
 
-Downloading the [Cloudera CDH](https://www.cloudera.com/downloads/quickstart_vms.html) or [Hortonworks HDP](https://hortonworks.com/products/sandbox/) sandboxs are the easiest way to get started. If you run Ubuntu, Debian or RedHat, those two distributions provide packages integrated with apt-get and yum. It is also possible to download the binaries from the [official website](http://hbase.apache.org/).
+Downloading the [Cloudera CDH](https://www.cloudera.com/downloads/quickstart_vms.html) or [Hortonworks HDP](https://hortonworks.com/products/sandbox/) sandboxes are the easiest ways to get started. If you run Ubuntu, Debian or RedHat, those two distributions provide packages integrated with apt-get and yum. It is also possible to download the binaries from the [official website](http://hbase.apache.org/).
 
 ## Starting HBase
 
