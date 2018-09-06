@@ -1,11 +1,11 @@
 ---
-title: Contribute
-description: How to contribute to the project
-keywords: contribute, git, github, open source, documentation, versioning, pull requests, bug, issues
-sort: 4
+title: Contribution Guide
+description: Project contribution guidelines for developer
+keywords: develop, contribute, git, github, open source, documentation, versioning, pull requests, bug, issues
+sort: 5
 ---
 
-# Contributing
+# Contribution Guide
 
 ## Introduction
 
