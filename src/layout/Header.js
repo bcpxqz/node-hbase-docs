@@ -103,7 +103,7 @@ class Header extends Component {
             <Button
               color="inherit"
               aria-label="header-bug"
-              data-for="header-menu"
+              data-for="header-tooltip"
               data-tip="Report an issue"
               href="https://github.com/adaltas/node-hbase/issues"
               target="_blank"
@@ -115,7 +115,7 @@ class Header extends Component {
             <Button
               color="inherit"
               aria-label="header-github"
-              data-for="header-menu"
+              data-for="header-tooltip"
               data-tip="Toggle the menu"
               href="https://github.com/adaltas/node-hbase"
               target="_blank"
@@ -126,7 +126,7 @@ class Header extends Component {
             </Button>
             <Button
               aria-label="header-menu"
-              data-for="header-menu"
+              data-for="header-tooltip"
               data-tip="Toggle the menu"
               onClick={onMenuClick}
               className={css(styles.button).toString()}
@@ -134,7 +134,7 @@ class Header extends Component {
               <FaBars css={styles.icon} />
             </Button>
             <ReactTooltip
-              id="header-menu"
+              id="header-tooltip"
               delayShow={300}
               place="bottom"
               effect="solid"

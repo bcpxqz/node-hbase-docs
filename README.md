@@ -5,7 +5,7 @@ The official website of the [Node.js HBase project](https://github.com/adaltas/n
 
 To install and run the server:
 
-```
+```bash
 git clone https://github.com/adaltas/node-hbase-docs.git hbase-docs
 cd hbase-docs
 yarn install
@@ -16,7 +16,7 @@ npm run develop
 
 Encrypt the token for Travis:
 
-```
+```bash
 docker run \
   --rm -v $PWD:/repo -v ~/.travis:/travis \
   andredumas/travis-ci-cli \
