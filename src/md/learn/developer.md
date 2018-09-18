@@ -35,7 +35,7 @@ docker run --name stargate -p 2181:2181 -p 60010:60010 -p 60000:60000 -p 60020:6
 
 Note, the current HBase image from sixeyed and are currently based on the CentOS:6 image which is incompatible with the latest kernels. Here is how to build your own new image:
 
-```
+```bash
 # Build the base image
 docker build -t fork-hbase docker/hbase-1.1.2
 # Build the REST image
@@ -46,7 +46,7 @@ docker run --name stargate --rm -p 60080:8080 fork-hbase-rest
 
 Or with the REST server behind a reverse proxy:
 
-```
+```bash
 # Build the base image
 docker build -t fork-hbase docker/hbase-1.1.2
 # Build the REST image
