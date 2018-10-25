@@ -30,7 +30,7 @@ All options except the "table" option are optional. The following properties are
   First row returned by the scanner.   
 * `endRow`   
   Row stopping the scanner, not returned by the scanner.   
-* `columns`   
+* `column`   
   Filter the scanner by columns (a string or an array of columns).   
 * `batch`   
   Number of cells returned on each iteration, internal use, default to "1000".   

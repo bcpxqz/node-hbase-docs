@@ -48,8 +48,8 @@ hbase()
 .create({
   IS_META: false,
   IS_ROOT: false,
-  COLUMNS: [{
-    NAME: 'my_new_column'
+  ColumnSchema: [{
+    name: 'my_new_column'
   }]
 }, (error, success) => {
   console.info('Table created: ' + (success ? 'yes' : 'no'))
